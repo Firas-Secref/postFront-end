@@ -1,0 +1,77 @@
+<!--
+<div class="tout">
+    <div class="row ajout">
+        <p>Ajout Nature Projet</p> 
+    </div>
+    <div class=" formulaire">
+        
+        <div class="row">
+            <form>     
+                
+                    <div class="form-group col-12">
+                        <span class="p-float-label">
+                            
+                           <input class="input" type="text" id="inputtext" pInputText  [(ngModel)]="newNature.nature"    name="natureProjet"> 
+                           <label for="inputtext"  >Nature Projet</label>
+                       </span>
+                      </div>
+                
+                 <p-button class="boutton" label="Ajout" styleClass="p-button-secondary"  (onClick)="ajoutNature()" ></p-button>
+            </form>
+        </div>
+       
+    </div>
+</div>
+-->
+
+
+
+<!--
+ <br>
+ <br>
+ <div class="row" >
+     <p-tabView  >
+         <p-tabPanel   header="Ajout Region"  >
+            
+ 
+         </p-tabPanel>
+         -->
+
+
+         <div class="tout">
+            <div class="container">
+                <div class="inscription">
+                    <h1  class="title">Ajout Nature Projet</h1> 
+                        <form [formGroup]="form"> 
+                            
+                                <div class="form-group col-12">
+                                    <span class="p-float-label">
+                                        <input formControlName="nature" class="input" type="text" id="inputtext" pInputText name="natureProjet"> 
+                                        <label for="inputtext"  >Nature Projet</label> 
+                                   </span>
+                                  </div>
+                            <!-- <p-button class="boutton" label="Ajout" styleClass="p-button-secondary"  (onClick)="ajoutRegion()" ></p-button>-->
+                            
+                             <div class="button"> 
+                                <input type="submit" value="ajouter" (click)="ajoutNature()">
+            
+                            </div>
+                            
+                               
+                        </form>
+                  
+                </div>
+                    
+                   
+                
+            </div>
+        
+        </div>
+        
+                      
+ 
+ 
+ 
+ 
+ 
+

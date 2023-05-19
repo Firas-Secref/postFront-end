@@ -1,0 +1,31 @@
+/*@import "../node_modules/angular-calendar/scss/angular-calendar"*/
+
+h3 {
+    margin: 0 0 10px;
+  }
+
+  pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+  }
+
+
+
+
+  .button{
+    width:400px;
+    margin-left:430px;
+}
+
+.button input{
+    display:block;
+    width:40%;
+    margin-top:10px;
+    font-size: 18px;
+    padding: 6px;
+    border:none;
+    border-radius:3px;
+    background: rgb(16,21,94);
+    color:rgba(255,255 ,255);
+
+}

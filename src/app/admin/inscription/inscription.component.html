@@ -1,0 +1,148 @@
+
+<div class="body">
+    <div class="container">
+        <div class=" inscription">
+             <h1 class="title">Ajout Utilisateur</h1>
+             <form [formGroup]="inscriptionForm" action="#"   #insciption="ngForm">
+              <!--prenon-->
+                <div class="info-utilisateur">
+                  <div class="input-box">
+                     <label for="prenom">Prénom</label>
+                     <input formControlName="prenom" type="text"  pInputText  name="prenom"  value="" required   > 
+                     <div *ngIf="inscriptionForm.get('prenom').invalid && (inscriptionForm.get('prenom').dirty || inscriptionForm.get('prenom').touched)"
+                     class="alert "> 
+                     <div *ngIf="inscriptionForm.get('prenom').errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                     </div>
+       
+                   </div>
+                  </div>
+                  <!--nom-->
+                  <div  class="input-box">
+                     <label for="Nom">Nom</label>
+                     <input formControlName="nom" type="text"  pInputText  name="nom"  value="" required> 
+                     <div *ngIf="inscriptionForm.get('nom').invalid && (inscriptionForm.get('nom').dirty || inscriptionForm.get('nom').touched)"
+                     class="alert "> 
+                     <div *ngIf="inscriptionForm.get('nom').errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                     </div>
+                     
+                     
+                   </div>
+                  </div >
+                 <div class="input-box">
+                     <label for="Nom">Matricule</label>
+                     <input formControlName="matricule" type="number"  pInputText  name="matricule"  value="" required    > 
+                     <div *ngIf="inscriptionForm.get('matricule').invalid && (inscriptionForm.get('matricule').dirty || inscriptionForm.get('matricule').touched)"
+                     class="alert "> 
+                     <div *ngIf="inscriptionForm.get('matricule').errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire avec  une matricule valide 
+                     </div>
+                    
+                     </div>
+                 </div>
+                 <div class="input-box">
+                 <label for="Nom">Email</label>
+                 <input formControlName="email" type="email"  pInputText  name="email"  value="" required     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" > 
+                 <div *ngIf="inscriptionForm.get('email').invalid && (inscriptionForm.get('email').dirty || inscriptionForm.get('email').touched)"
+                 class="alert "> 
+                 <div *ngIf="inscriptionForm.get('email').errors?.['required']"  class="alert alert-danger">
+                   Veuillez compléter ce champ obligatoire 
+                 </div>
+                 <div *ngIf="inscriptionForm.get('email').errors?.['pattern']"  class="alert alert-danger">
+                  Veuillez entrer une adresse e-mail valide
+                </div>
+                 </div>
+             
+                 </div>
+                 <div  class="input-box">
+                     <label for="Nom">Téléphone</label>
+                     <input formControlName="telephone" type="number"  pInputText  name="telephone"  value="" required    pattern="\d{8,}"> 
+                     <div *ngIf="inscriptionForm.get('telephone').invalid && (inscriptionForm.get('telephone').dirty || inscriptionForm.get('telephone').touched)"
+                     class="alert "> 
+                     <div *ngIf="inscriptionForm.get('telephone').errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire  avec un numéro de téléphone valide 
+                     </div>
+                     <div *ngIf="inscriptionForm.get('telephone').errors?.['pattern']" class="alert alert-danger">
+                      "Veuillez entrer un nombre d'au moins 8 chiffres"
+                    </div> 
+                     </div>
+                 </div>
+                 <div class="input-box">
+                     <label for="Nom">Mot de passe</label>
+                     <input formControlName="password" type="password"  pInputText  name="motDePasse"  value="" required  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8"> 
+                     <div *ngIf="inscriptionForm.get('password').invalid && (inscriptionForm.get('password').dirty || inscriptionForm.get('password').touched)"
+                     class="alert "> 
+                     <div *ngIf="inscriptionForm.get('password').errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                     </div>
+                     <div *ngIf="inscriptionForm.get('password').errors?.['pattern']" class="alert alert-danger">
+                      "Le mot de passe doit contenir  au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial."
+                    </div> 
+                    <div *ngIf="inscriptionForm.get('password').errors?.['minlength']" class="alert alert-danger">
+                      "  Le mot de passe doit être d'au moins 8 caractères"
+                    </div> 
+                     </div>
+                 </div>
+                 <div class="input-box">
+                  <label for="Nom">Role</label>
+                  <p-dropdown formControlName="role" [options]="rolesOptions" optionLabel="roleName"></p-dropdown>
+                  
+              </div>
+                </div>
+                <div class="button"> 
+                    <input type="submit" value="ajouter" (click)="ajoutnew()"    [disabled]="!insciption.form.valid">
+
+                </div>
+
+           </form>
+        </div>
+         
+         
+     </div>
+</div>
+
+            <!--
+                <input type="number" placeholder="Matricule" pInputText  name="matricule"  value="" required    [(ngModel)]="newUtilisateur.matricule" #matricule="ngModel"> 
+            <div class="row">
+                <input type="text" placeholder="Prenom"  pInputText  name="prenom"  value="" required    [(ngModel)]="newUtilisateur.prenom" #prenom="ngModel"> 
+                <div *ngIf="prenom.invalid && (nom.dirty || prenom.touched)"
+                class="alert "> 
+                <div *ngIf="prenom.errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                </div>
+                
+                  
+              </div>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="nom" pInputText  name="nom"  value="" required    [(ngModel)]="newUtilisateur.nom" #nom="ngModel"> 
+                <div *ngIf="nom.invalid && (nom.dirty || nom.touched)"
+                class="alert "> 
+                <div *ngIf="nom.errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                </div>
+                
+                
+              </div>
+              
+            </div>
+            <div class="row">
+                <input type="email" placeholder="email" pInputText  name="email"  value="" required    [(ngModel)]="newUtilisateur.email" #email="ngModel"> 
+            </div>
+            <div class="row">
+                <input type="number" placeholder="telephone"  pInputText  name="telephone"  value="" required    [(ngModel)]="newUtilisateur.telephone" #telephone="ngModel"> 
+            </div>
+            <div class="row">
+                <input type="password" placeholder="motDePasse"  pInputText  name="motDePasse"  value="" required    [(ngModel)]="newUtilisateur.motDePasse" #motDePasse="ngModel"> 
+            </div>
+            
+            <p-button label="Ajout" styleClass="p-button-primary"     (onClick)="ajoutnew()"></p-button>
+        -->
+    
+        
+        
+        
+        
+        
+  

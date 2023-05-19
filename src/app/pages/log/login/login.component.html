@@ -1,0 +1,17 @@
+
+
+
+    <form   [formGroup]="inputForm" class="form">
+        <div class="box">
+            <input type="text" name="matricule" placeholder="Matricule"  formControlName="matricule"/>
+            <div  class="alert alert-primary" role="alert"  *ngIf="!inputForm.pristine && inputForm.controls['matricule'].errors?.['required']">
+                Veuillez compléter ce champ obligatoire 
+            </div>
+            <input type="password" name="pass" placeholder="mot de passe"   formControlName="password" />
+            <div  class="alert alert-primary" role="alert"  *ngIf="!inputForm.pristine && inputForm.controls['password'].errors?.['required']">
+                Veuillez compléter ce champ obligatoire 
+            </div>
+            <input type="submit"  (click)="onsubmit()" value="s'autentifier" name="valider" />
+        </div>
+    </form>
+

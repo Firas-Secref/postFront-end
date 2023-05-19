@@ -1,0 +1,145 @@
+/*.inscription{
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    background: rgb(248, 235, 44);
+    border: 4px solid rgb(240, 224, 6);
+    justify-content: center;
+    align-items:center;
+    margin:120px;
+    margin-top: 30px;
+    margin-left:300px;
+
+}
+
+.row{
+    width:300px;
+    margin-left:50px;
+    
+}*/
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:sans-serif
+}
+
+.body{
+    display:flex;
+    height:100vh;
+    justify-content: center;
+    align-items:center;
+   
+    
+}
+
+
+.container{
+    width: 100%;
+    max-width:650px;
+    background-color: rgb(16,21, 94);
+    padding:30px;
+    margin:0 28px;
+    border-radius: 20px;
+    box-shadow:inset -2px 2px 2px   rgb(255,194,36);
+    
+
+}
+
+
+.title{
+    font-size: 30px;
+    font-weight: 600px;
+    text-align: center;
+    padding-bottom: 6px;
+    color: rgb(255,194,36);
+    text-shadow:2px 2px 2px black;
+    border-bottom:solid  1px   rgb(255,194,36);
+}
+
+
+.info-utilisateur{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    padding:20px 0;
+}
+
+
+.input-box:nth-child(2n){
+    justify-content: end;
+
+}
+
+.input-box{
+    display:flex;
+    flex-wrap: wrap;
+    width:50%;
+    padding-bottom: 15px;
+}
+
+
+.input-box label{
+    width:95%;
+    color:rgb(255,194,36);
+    font-size: 20px;
+    font-weight: 400;
+    margin:5px 0;
+}
+
+
+.input-box input{
+    height:40px;
+    width:95%;
+    border-radius: 7px;
+    outline:none;
+    border:1px solid grey;
+    padding:0 10px;
+}
+
+
+
+.button{
+    margin-top: 40px;
+}
+
+.button input{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    border-radius:3px;
+    background:rgb(255,194,36);
+    color:rgba(255,255 ,255);
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+    .container{
+        min-width: 280px;
+    }
+
+    .input-box{
+        margin-bottom: 12px;
+        width:100%;
+    }
+
+    .info-utilisateur{
+        max-height: 300px;
+        overflow: auto;
+    }
+
+    .info-utilisateur::-webkit-scrollbar{
+        
+    }
+
+}

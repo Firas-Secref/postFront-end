@@ -1,0 +1,42 @@
+<div  class=" row bajout">
+    <div class="col-6"><p  > Direction d'achat</p></div>
+    <div class="col-6" >
+      <button   pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded"  style="background-color:rgb(255,194,36); color: #023674; width: 60px;"    (click)="ajoutDirectionAchat()" ></button>
+    </div>
+  </div>
+  
+  
+  <div class="tab">
+      <p-table  [value]="directionAchatList">
+        <p-table>Type Direction Achat </p-table>
+        <ng-template pTemplate="header" >
+          <tr>
+            <th>Nom</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </ng-template>
+       
+        <ng-template pTemplate="body" let-directionAchatItem >
+          <tr>
+            <td>{{directionAchatItem.achatDirection}}</td>
+
+            
+           
+            <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left"     style="background-color:rgb(16,21,94); color:#fff; width: 50px;" (click)="updateDirectionAchat(directionAchatItem.id)"></button></td>
+            <td><button pButton type="button" icon="pi pi-trash" iconPos="left" style="background-color:rgb(246,0,0); color:#fff; width: 50px;" (click)="deleteDirectionAchat(directionAchatItem)"></button></td>
+           
+            
+          </tr>
+        </ng-template>
+      </p-table>
+      
+  </div>
+  
+  
+  
+  
+  
+  
+
+

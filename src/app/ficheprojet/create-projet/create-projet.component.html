@@ -1,0 +1,383 @@
+<div class="row   ajout">
+  <div class="col-6"> Ajout Projet</div>
+ </div>
+  <div class="row formulaire">
+    <p-tabView >
+      <!--creatino de la carte-->
+        <p-tabPanel header="Création de la carte" >
+          <div class="row">
+            <!--Nature de projet-->
+           <div  class="col-6">
+               <label for="inputtext"  >Nature de projet:</label>
+           </div>
+           <div class="col-6">
+            {{natureprojet!= undefined ? natureprojet.nature : ''}} 
+           </div>
+       </div>
+       <br>
+      <!--sujet-->
+       <div class="row">
+          <div class="form-group col-6">
+                <label for="inputtext"  >Sujet:</label>
+           </div>
+           <div  class="col-6">
+               {{ detailsProjet?.sujet}}
+           </div>
+           
+          
+
+       </div>
+       <br>
+       <!--region-->
+       <div  class="row">
+           <div class="form-group col-6">
+               <label for="inputtext">Region:</label>
+          </div>
+          <div class="col-6">{{region!= undefined ? region.nomRegion : ''}}</div>
+             
+       </div>
+       <br>
+       <!--ordonnateur-->
+       <div  class="row">
+           <div class="col-6">
+               <label for="inputtext">Ordonnateur:</label>
+           </div>
+           <div class="col-6">
+               {{detailsProjet?.ordonnateur}}
+           </div>
+
+       </div>
+       <br>
+        <!--numcompte-->
+        <div class="row">
+           <div class="col-6">
+               <label for="inputtext">NumCompte:</label>
+           </div>
+          
+           <div class="col-6">
+               {{detailsProjet?.numCompte}}
+           </div>
+        </div>
+        <br>
+        <!--budgetI-->
+        <div  class="row">
+           <div class="col-6">
+               <label for="inputtext">Budget Initial: </label>
+         </div>
+         <div class="col-6">
+                 {{detailsProjet?.coutInitial}}   
+     </div>
+
+        </div>
+        <br>
+<!--budgetJour-->
+        <div class="row">
+          
+         
+          <div class="col-6">
+
+                <label for="inputtext">Budget mise a jour </label> 
+               
+          </div> 
+          <div class="col-6">
+
+       {{detailsProjet?.coutMisAjour}} 
+          
+     </div> 
+        </div>
+        <br>
+      
+       
+      
+        </p-tabPanel>
+      <!--Calendrier previsionnel-->  
+        <p-tabPanel header="Données sur le projet">
+          <div class="row">
+            <div class="col-6">
+                <label for="inputtext">Responsable du dossier:</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.responsable}}   
+            </div>
+           </div>
+           <br>
+           <!--dateCahier-->
+           <div class="row">
+            <div class="col-6">
+                <label for="inputtext">Date d'agrément des spécifications :</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.dateAgrementSpecifications | date}}   
+            </div>
+           </div>
+           <br>
+           
+           <!--negociation-->
+           <div class="row">
+            <div class="col-6">
+                <label for="inputtext">Date d'annonce de concours/Début de négociation:</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.dateNegociation | date}}   
+            </div>
+           </div>
+           <br>
+           
+           <!--soummision-->
+           <div class="row">
+            <div class="col-6">
+                <label for="inputtext">Date d'ouverture des soumissions :</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.dateOuvertureSoumission | date}}   
+            </div>
+           </div>
+           <br>
+           
+           <!--comite-->
+           <div class="row">
+            <div class="col-6">
+                <label for="inputtext">La date à la quelle le dossier a été transmis au commité des achats:</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.dateTransmissionComite | date}}   
+            </div>
+           </div>
+           <br>
+          
+           <!--conseil-->
+           <div class="row">
+            <div class="col-6">
+                <label for="inputtext">Date de réponse du comité de suivi:</label>
+            </div>
+            <div class="col-6">
+                {{detailsProjet?.dateReponseCommite}}   
+            </div>
+           </div>
+           <br>
+       <br>
+        </p-tabPanel>
+    
+
+<!--Les personnes imlpiquées dans la mise en oeuvre du projet-->
+      <p-tabPanel  header="Les personnes imlpiquées dans la mise en oeuvre du projet" >
+        <form #fiche="ngForm">
+          <!--Chef de projet-->
+      <br>
+      <h2 class="titre">Chef de projet</h2>
+  <div class="row formulaire">
+       <div class="form-group col-3">
+          <span class="p-float-label">
+              <input type="text" id="inputtext" pInputText     [(ngModel)]="newfiche.nomChefProjet"  name="nomchef"  pattern="[A-Za-z\s]+" value=""  required #nomchef="ngModel"> 
+             <div *ngIf="nomchef.invalid && (nomchef.dirty || nomchef.touched)"class="alert"> 
+              <!--{{nomchef.errors|json}}-->
+                <div *ngIf="nomchef.errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                </div>
+                
+               <div *ngIf="nomchef.errors?.['pattern']" class="alert alert-danger">
+                "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+               </div>   
+             </div>
+           
+             <label for="inputtext"  >Nom et prenon</label>
+         </span>
+        </div>
+        <div class="form-group col-3">
+          <span class="p-float-label">
+             <input type="text" id="inputtext" pInputText     [(ngModel)]="newfiche.gradeChefProjet"  name="titrechef"  value=""    pattern="[A-Za-z\s]+" required #titrechef="ngModel"> 
+             <div *ngIf="titrechef.invalid && (titrechef.dirty || titrechef.touched)"class="alert"> 
+              <div *ngIf="titrechef.errors?.['required']"  class="alert alert-danger">
+                Veuillez compléter ce champ obligatoire  et doit contenir du texte
+              </div>
+               <div *ngIf="titrechef.errors?.['pattern']" class="alert alert-danger">
+                "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+               </div> 
+            </div>
+             <label for="inputtext"  >Titre</label>
+         </span>
+        </div>
+        <div class=" form-group col-3">
+          <span class="p-float-label">
+             <input type="number" id="inputnumber" pInputText  [(ngModel)]="newfiche.telChefProjet"  name="telchef"  value=""  required #telchef="ngModel"  pattern="\d{8,}"> 
+             <div *ngIf="telchef.invalid && (telchef.dirty || telchef.touched)"class="alert"> 
+             <div *ngIf="telchef.errors?.['required']"  class="alert alert-danger">
+              Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+              </div>
+             
+              <div *ngIf="telchef.errors?.['pattern']" class="alert alert-danger">
+                "Veuillez entrer un nombre d'au moins 8 chiffres"
+              </div>  
+          </div>
+             <label for="inputtext">Telephone </label>
+
+             </span>
+        </div>
+        <div class=" form-group col-3">
+          <span class="p-float-label">
+             <input type="email" id="inputnumber" pInputText  [(ngModel)]="newfiche.emailChefProjet"  name="emailchef"  value=""  required #emailchef="ngModel"   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" > 
+             <div *ngIf="emailchef.invalid && (emailchef.dirty || emailchef.touched)" class="alert"> 
+             <div *ngIf="emailchef.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+             
+              <div *ngIf="emailchef.errors?.['pattern']"  class="alert alert-danger">
+                Veuillez entrer une adresse e-mail valide
+              </div>  
+          </div>
+             <label for="inputtext">Adresse Email </label>
+
+             </span>
+        </div>
+      
+  </div>
+     
+     
+      <!--Le répresentant de l'Ordonnateur-->
+      <br>
+      <br>
+      <br>
+      <h2 class="titre">Le répresentant de l'Ordonnateur</h2>
+      <div class="row">
+        <div class="form-group col-3">
+          <label for="exampleInputEmail1">Nom et prenon</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" placeholder=""  [(ngModel)]="newfiche.nomOrdonnateur"  value="" required #nomordonnateur="ngModel"  name="nomordonnateur"   pattern="[A-Za-z\s]+" >
+          <div *ngIf="nomordonnateur.invalid && (nomordonnateur.dirty || nomordonnateur.touched)"class="alert"> 
+            <!--{{nomchef.errors|json}}-->
+              <div *ngIf="nomordonnateur.errors?.['required']"  class="alert alert-danger">
+                Veuillez compléter ce champ obligatoire  et doit contenir du texte
+              </div>
+              
+             <div *ngIf="nomordonnateur.errors?.['minlength']" class="alert alert-danger">
+              Veuillez entrer au moins 4 caractères dans ce champ
+             </div> 
+             <div *ngIf="nomordonnateur.errors?.['pattern']" class="alert alert-danger">
+              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+             </div>   
+           </div>
+        
+        </div>
+        <div class="form-group col-3">
+          <label for="exampleInputEmail1">Titre</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  [(ngModel)]="newfiche.gradeOrdonnateur"  value=""  required #titreordonnateur="ngModel" value  name="titreordonnateur"   pattern="[A-Za-z\s]+">
+          <div *ngIf="titreordonnateur.invalid && (titreordonnateur.dirty ||titreordonnateur.touched)"class="alert"> 
+            <!--{{nomchef.errors|json}}-->
+              <div *ngIf="titreordonnateur.errors?.['required']"  class="alert alert-danger">
+                Veuillez compléter ce champ obligatoire  et doit contenir du texte
+              </div>
+              
+             <div *ngIf="titreordonnateur.errors?.['minlength']" class="alert alert-danger">
+              Veuillez entrer au moins 4 caractères dans ce champ
+             </div>   
+             <div *ngIf="titreordonnateur.errors?.['pattern']" class="alert alert-danger">
+              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+             </div>  
+           </div>
+        </div>
+        <div class="form-group col-3">
+          <label for="exampleInputEmail1">Telephone</label>
+          <br>
+          <input type="number" class="form-control"  aria-describedby="emailHelp" placeholder=""  [(ngModel)]="newfiche.telOrdonnateur" value="" required #telordonnateur="ngModel"  name="telordonnateur"  pattern="\d{8,}">
+          <div *ngIf="telordonnateur.invalid && (telordonnateur.dirty || telordonnateur.touched)"class="alert"> 
+            <div *ngIf="telordonnateur.errors?.['required']"  class="alert alert-danger">
+              Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+              </div>
+             
+             <div *ngIf="telordonnateur.errors?.['pattern']" class="alert alert-danger">
+               "Veuillez entrer un nombre d'au moins 8 chiffres"
+             </div> 
+          </div>
+        </div>
+        <div class="form-group col-3">
+          <label for="exampleInputEmail1">Email address</label>
+          <br>
+          <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="" [(ngModel)]="newfiche.emailOrdonnateur"  value=""   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required #emailordonnateur="ngModel"  name="emailordonnateur">
+          <div *ngIf="emailordonnateur.invalid && (emailordonnateur.dirty ||emailordonnateur.touched)" class="alert">
+            <div *ngIf="emailordonnateur.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+             <div *ngIf="emailordonnateur.errors?.['pattern']"  class="alert alert-danger">Veuillez entrer une adresse e-mail valide</div>
+           </div>
+          
+        </div>
+        
+      </div>
+      <br>
+      <!--Le répresentant de service d'achat concerné-->
+      <br>
+      <br>
+      <h2 class="titre">Le répresentant de service d'achat concerné</h2>
+      <br>
+      <div class="row">
+        <div class="form-group col-3">
+          <span class="p-float-label">
+              <input type="text" id="inputtext" pInputText     [(ngModel)]="newfiche. nomRepresentantService"  name="nomservice"  pattern="[A-Za-z\s]+" value=""  required #nomservice="ngModel"   pattern="[A-Za-z\s]+"> 
+             <div *ngIf="nomservice.invalid && (nomservice.dirty || nomservice.touched)"class="alert"> 
+              <!--{{nomchef.errors|json}}-->
+                <div *ngIf="nomservice.errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                </div>
+                
+               <div *ngIf="nomservice.errors?.['pattern']" class="alert alert-danger">
+                "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+               </div>   
+             </div>
+           
+             <label for="inputtext"  >Nom et prenon</label>
+         </span>
+        </div>
+        <div class="form-group col-3">
+          <span class="p-float-label">
+            <input type="text" id="inputtext" pInputText     [(ngModel)]="newfiche.gradeRepresentantService"  name="titreservice"  value=""    pattern="[A-Za-z\s]+" required #titreservice="ngModel"> 
+            <div *ngIf="titreservice.invalid && (titrechef.dirty || titrechef.touched)"class="alert"> 
+             <div *ngIf="titreservice.errors?.['required']"  class="alert alert-danger">
+               Veuillez compléter ce champ obligatoire  et doit contenir du texte
+             </div>
+              <div *ngIf="titreservice.errors?.['pattern']" class="alert alert-danger">
+               "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+              </div> 
+           </div>
+            <label for="inputtext"  >Titre</label>
+        </span>
+         
+        </div>
+        <div class="form-group col-3">
+          <span class="p-float-label">
+            <input type="number" id="inputnumber" pInputText  [(ngModel)]="newfiche.telRepresentantService"  name="telservice"  value=""  required #telservice="ngModel"  pattern="\d{8,}"> 
+            <div *ngIf="telservice.invalid && (telservice.dirty || telservice.touched)"class="alert"> 
+            <div *ngIf="telservice.errors?.['required']"  class="alert alert-danger">
+             Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+             </div>
+            
+             <div *ngIf="telservice.errors?.['pattern']" class="alert alert-danger">
+               "Veuillez entrer un nombre d'au moins 8 chiffres"
+             </div>  
+         </div>
+            <label for="inputtext">Telephone </label>
+
+            </span>
+        </div>
+        <div class="form-group col-3">
+          <span class="p-float-label">
+            <input type="email" id="inputnumber" pInputText  [(ngModel)]="newfiche.emailRepresentantService"  name="emailchef"  value=""  required #emailservice="ngModel"   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" > 
+            <div *ngIf="emailservice.invalid && (emailservice.dirty || emailservice.touched)" class="alert"> 
+            <div *ngIf="emailservice.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+            
+             <div *ngIf="emailservice.errors?.['pattern']"  class="alert alert-danger">
+               Veuillez entrer une adresse e-mail valide
+             </div>  
+         </div>
+            <label for="inputtext">Adresse Email </label>
+
+            </span>
+         
+          
+        </div>
+      </div>
+<br>
+      <tr>
+        <p-button label="Ajouter" styleClass="p-button-secondary "   [disabled]="!fiche.form.valid" (click)="ajoutnew()"></p-button>
+        
+      </form>
+
+      </p-tabPanel>
+</p-tabView>
+  </div>
+ 
+  

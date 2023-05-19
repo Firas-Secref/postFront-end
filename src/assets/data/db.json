@@ -1,0 +1,256 @@
+{
+  "projet": [
+    {
+      "directionachat": "4",
+      "natureprojet": "3",
+      "region": "1",
+      "sujet": "maintenence",
+      "ordonnateur": "nour",
+      "numCompte": 1234,
+      "coutInitial": 20,
+      "coutMisAjour": 20,
+      "responsable": "mohamed",
+      "dateAgrementSpecifications": "2023-05-11",
+      "dateNegociation": "2023-05-10",
+      "dateOuvertureSoumission": "2023-05-31",
+      "dateTransmissionComite": "2023-05-31",
+      "dateReponseCommite": "2023-05-24",
+      "id": 12361,
+      "typeachat": "5",
+      "selected": false
+    }
+  ],
+  "fiche": [
+    {
+      "nomchef": "nour khedri",
+      "titrechef": "chef",
+      "telchef": 54709789,
+      "emailchef": "nourkhedri0206@gmail.com",
+      "nomordonnateur": "nour",
+      "titreordonnateur": "chefff",
+      "telordonnateur": 54709789,
+      "emailordonnateur": "nourkhedri0206@gmail.com",
+      "nomservice": "nour khedri",
+      "titreservice": "chef gghghuju",
+      "telservice": 54709789,
+      "emailservice": "nourkhedri0206@gmail.com",
+      "id": 6
+    },
+    {
+      "nomchef": "nour",
+      "titrechef": "",
+      "telchef": 543456,
+      "emailchef": "",
+      "nomordonnateur": "nour khedri",
+      "titreordonnateur": "nourkhedri0206@gmail.com",
+      "telordonnateur": "54709789",
+      "emailordonnateur": "nourkhedri0206@gmail.com",
+      "nomservice": "nour khedri",
+      "titreservice": "CHEF",
+      "telservice": "54709789",
+      "emailservice": "nourkhedri0206@gmail.com",
+      "id": 7
+    },
+    {
+      "nomchef": "nour khedri",
+      "titrechef": "chef",
+      "telchef": 54709789,
+      "emailchef": "nourkhedri0206@gmail.com",
+      "nomordonnateur": "nour",
+      "titreordonnateur": "chef",
+      "telordonnateur": "54709789",
+      "emailordonnateur": "nourkhedri0206@gmail.com",
+      "nomservice": "maha",
+      "titreservice": "CHEF",
+      "telservice": "54709789",
+      "emailservice": "nourkhedri0206@gmail.com",
+      "id": 8
+    },
+    {
+      "nomchef": "nour khedri",
+      "titrechef": "directeur",
+      "telchef": 54709789,
+      "emailchef": "nourkhedri02@gmail.com",
+      "nomordonnateur": "nour",
+      "titreordonnateur": "directeir",
+      "telordonnateur": 54709789,
+      "emailordonnateur": "nourkheri02@gmail.com",
+      "nomservice": "nour",
+      "titreservice": "directeur",
+      "telservice": 54709789,
+      "emailservice": "nourkhedri02@gmail.com",
+      "id": 9
+    },
+    {
+      "nomChefProjet": "nour",
+      "gradeChefProjet": "chef",
+      "telChefProjet": 54709789,
+      "emailChefProjet": "nourkhedri0206@gmail.com",
+      "nomOrdonnateur": "nour",
+      "gradeOrdonnateur": "chef",
+      "telOrdonnateur": 54709789,
+      "emailOrdonnateur": "nourkhedri0206@gmail.com",
+      "nomRepresentantService": "nour khedri",
+      "gradeRepresentantService": "chef",
+      "telRepresentantService": 54709789,
+      "emailRepresentantService": "nourkhedri0206@gmail.com",
+      "id": 10
+    }
+  ],
+  "budget": [
+    {
+      "budgetValidee": 10,
+      "budgetEstimee": 10,
+      "delaisRealisationJour": 10,
+      "dateDebutAchevement": "2023-04-26",
+      "typefinancement": "bourse",
+      "numcompte": "12345",
+      "id": 22
+    },
+    {
+      "numcompte": "12345",
+      "typefinancement": "bourse",
+      "budgetEstimee": "10.000",
+      "budgetValidee": "20.000",
+      "dateDebutAchevement": "2023-04-26",
+      "delaisRealisationJour": 23,
+      "id": 23
+    },
+    {
+      "numcompte": "12346",
+      "typefinancement": "bourse",
+      "budgetEstimee": "30.000",
+      "budgetValidee": "60.0000",
+      "dateDebutAchevement": "2023-04-26",
+      "delaisRealisationJour": 1,
+      "id": 24
+    },
+    {
+      "numcompte": 123345,
+      "typefinancement": "bourse",
+      "budgetEstimee": 50,
+      "budgetValidee": "10.000",
+      "dateDebutAchevement": "2023-06-01",
+      "delaisRealisationJour": 10,
+      "id": 25
+    },
+    {
+      "numCompte": 12345,
+      "typeFinancement": "bourse",
+      "budgetEstimee": 60,
+      "budgetValidee": "60.000",
+      "dateDebutMiseEnOeuvre": "2023-05-24",
+      "delaiRealisation": 10,
+      "id": 26
+    }
+  ],
+  "region": [
+    {
+      "nomRegion": "tunis",
+      "id": 1
+    },
+    {
+      "nomRegion": "bejaa",
+      "id": 2
+    }
+  ],
+  "nature-projet": [
+    {
+      "nature": "Acquisition Acquisition et préparation du terrain",
+      "id": 1
+    },
+    {
+      "nature": "Aménagemenet",
+      "id": 2
+    },
+    {
+      "nature": "Construction",
+      "id": 3
+    },
+    {
+      "nature": "fournitures postales",
+      "id": 4
+    },
+    {
+      "nature": "Maintenance des équipements et équipements techniques",
+      "id": 5
+    },
+    {
+      "nature": "Maintenance des systèmes informatiques",
+      "id": 6
+    },
+    {
+      "nature": "Maintenance du batiment",
+      "id": 7
+    },
+    {
+      "nature": "Matériel et fournitures de bureau et administratif",
+      "id": 8
+    },
+    {
+      "nature": "construction",
+      "id": 9
+    }
+  ],
+  "type-achat": [
+    {
+      "achatType": "informatique",
+      "id": 3
+    },
+    {
+      "achatType": "divers",
+      "id": 5
+    },
+    {
+      "achatType": " batiment et travaux",
+      "id": 6
+    },
+    {
+      "achatType": "batill",
+      "id": 7
+    }
+  ],
+  "direction-achat": [
+    {
+      "achatDirection": "direction d'achat informatique",
+      "id": 3
+    },
+    {
+      "achatDirection": "Direction d'achat divers",
+      "id": 5
+    },
+    {
+      "achatDirection": "direction d'achat informatique",
+      "id": 6
+    },
+    {
+      "achatDirection": "direction d'achat informatique",
+      "id": 7
+    }
+  ],
+  "utilisateur": [
+    {
+      "prenom": "nour",
+      "nom": "khedri",
+      "email": "nourkhedri0206@gmail.com",
+      "telephone": 54709789,
+      "matricule": 123344,
+      "motDePasse": "aazazz&é\"\"\"''(%/?????????????azaAAA1233/,;",
+      "id": "DKxNzqN"
+    }
+  ],
+  "ProjetEnCours": [
+    {
+      "couleur": "jaune",
+      "dateDebutProjet": "02-04-2023",
+      "dateAchevemetProjet": "10-04-2023",
+      "status": "enCours"
+    },
+    {
+      "couleur": "jaune",
+      "dateDebutProjet": "02-04-2023",
+      "dateAchevemetProjet": "10-04-2023",
+      "status": "accepte"
+    }
+  ]
+}

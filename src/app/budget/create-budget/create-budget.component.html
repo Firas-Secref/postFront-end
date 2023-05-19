@@ -1,0 +1,361 @@
+<div class="row   ajout">
+  <div class="col-6">Ajout Etude bugétaire</div>
+ </div>
+ <div class="row formulaire">
+
+  <p-tabView [scrollable]="true">
+     <!--creatino de la carte-->
+     <p-tabPanel header="Création de la carte" >
+      <div class="row">
+        <!--Nature de projet-->
+       <div  class="col-6">
+           <label for="inputtext"  >Nature de projet:</label>
+       </div>
+       <div class="col-6">
+        {{natureprojet!= undefined ? natureprojet.nature : ''}} 
+       </div>
+   </div>
+   <br>
+   <!--region-->
+   <div  class="row">
+    <div class="form-group col-6">
+        <label for="inputtext">Region:</label>
+   </div>
+   <div class="col-6">{{region!= undefined ? region.nomRegion : ''}}</div>
+      
+</div>
+<br>
+  <!--sujet-->
+   <div class="row">
+      <div class="form-group col-6">
+            <label for="inputtext"  >Sujet:</label>
+       </div>
+       <div  class="col-6">
+           {{ detailsProjet?.sujet}}
+       </div>
+   </div>
+   <br>
+   
+   <!--ordonnateur-->
+   <div  class="row">
+       <div class="col-6">
+           <label for="inputtext">Ordonnateur:</label>
+       </div>
+       <div class="col-6">
+           {{detailsProjet?.ordonnateur}}
+       </div>
+
+   </div>
+   <br>
+    <!--numcompte-->
+    <div class="row">
+       <div class="col-6">
+           <label for="inputtext">NumCompte:</label>
+       </div>
+      
+       <div class="col-6">
+           {{detailsProjet?.numCompte}}
+       </div>
+    </div>
+    <br>
+    <!--budgetI-->
+    <div  class="row">
+       <div class="col-6">
+           <label for="inputtext">Budget Initial: </label>
+     </div>
+     <div class="col-6">
+             {{detailsProjet?.coutInitial}}   
+ </div>
+
+    </div>
+    <br>
+<!--budgetJour-->
+    <div class="row">
+      
+     
+      <div class="col-6">
+
+            <label for="inputtext">Budget mise a jour </label> 
+           
+      </div> 
+      <div class="col-6">
+
+   {{detailsProjet?.coutMisAjour}} 
+      
+ </div> 
+    </div>
+    <br>
+    <!--prommess
+
+    <div class="row">
+      <div class="col-6"> 
+            <label for="inputtext">Promesses :</label>
+      </div>
+      <div class="col-6"> 
+       {{detailsProjet?.promesses}} 
+ </div>
+
+    </div>
+    <br>
+    paiement
+      
+    <div class="row">
+       <div class="col-6">
+         
+           <label for="inputtext">Paiements: </label>
+      
+        </div>
+
+        <div class="col-6">
+        
+          {{detailsProjet?.paiements}} 
+     
+       </div>
+
+    </div>
+  -->
+    </p-tabPanel>
+   
+<!--"Données sur le projet"-->
+  <p-tabPanel header="Données sur le projet" >
+    <div class="row">
+      <div class="col-6">
+          <label for="inputtext">Responsable du dossier:</label>
+      </div>
+      <div class="col-6">
+          {{detailsProjet?.responsable}}   
+      </div>
+     </div>
+     <br>
+     <!--dateCahier-->
+     <div class="row">
+        <div class="col-6   colorspan">
+           <span>Date d'agrément des spécifications :</span>
+        </div>
+        <div  class="col-6">
+          {{detailsProjet?.dateAgrementSpecifications | date}} 
+        </div>
+        
+           
+     </div>
+     <br>
+     <!--negociation-->
+     <div class="row">
+        <div class="col-6  colorspan">
+           <span>Date d'annonce de concours/Début de négociation:</span>
+        </div>
+        <div class="col-6">
+          {{detailsProjet?.dateNegociation |date}} 
+        </div>
+        
+     </div>
+     <br>
+     <!--soummision-->
+     <div class="row">
+        <div class="col-6  colorspan">
+           <span>Date d'ouverture des soumissions :</span>
+        </div>
+        <div  class="col-6">
+      {{detailsProjet?.dateOuvertureSoumission |date}} 
+        </div>
+
+     </div>
+     <br>
+     <!--comite-->
+     <div class="row">
+        <div class="col-6   colorspan">
+           <span>La date à la quelle le dossier a été transmis au commité des achats:</span>
+        </div>
+        <div  class="col-6"> 
+          {{detailsProjet?.dateTransmissionComite |date}} 
+        </div>
+     </div>
+     <br>
+     <!--conseil-->
+     <div class="row">
+        <div class="col-6    colorspan">
+           <span>Date de réponse du comité de suivi:</span>
+        </div>
+        <div  class="col-6">
+          {{detailsProjet?.dateReponseCommite |date}} 
+        </div>
+       
+     
+
+     </div>
+     
+  
+  
+ <br>
+  </p-tabPanel>
+<!--Les personnes imlpiquées dans la mise en oeuvre du projet-->
+  <p-tabPanel  header="Les personnes imlpiquées dans la mise en oeuvre du projet" >
+    <div class="row">
+      <div class="col-6   colorspan">
+         <span>Chef de projet:</span>
+      </div>
+      <div  class="col-6"> 
+        {{detailsProjet?.nomChefProjet}} 
+      </div>
+   </div><br>
+   <div class="row">
+    <div class="col-6   colorspan">
+       <span>Le répresentant de l'Ordonnateur:</span>
+    </div>
+    <div  class="col-6"> 
+      {{detailsProjet?.nomRepOrdonnateur}} 
+    </div>
+ </div><br>
+ <div class="row">
+  <div class="col-6   colorspan">
+     <span>Le répresentant de service d'achat concerné:</span>
+  </div>
+  <div  class="col-6"> 
+    {{detailsProjet?.nomRepresentantService}} 
+  </div>
+</div>
+  </p-tabPanel>
+  
+  <p-tabPanel header="Etude de budget" >
+    <form [formGroup]="budgetFormGroup">
+      
+      <div class="row  formulaire">
+        <br>
+        <!--numComte-->
+        <div class="field col-6 md:col-4   ">
+          <span class="p-float-label">
+            <input formControlName="numCompte" type="number" id="inputnumber" pInputText    name="numcompte" [(ngModel)]="newBudget.numCompte" value=""  pattern="\d{4,}" required> 
+              <!--<input type="text" id="inputtext" minlength="4" pInputText  name="numcompte" [(ngModel)]="newBudget.numcompte" value="" required #numcompte="ngModel">-->
+              <div *ngIf="budgetFormGroup.get('numCompte').invalid && (budgetFormGroup.get('numCompte').dirty || budgetFormGroup.get('numCompte').touched)" class="alert"> 
+                <div *ngIf="budgetFormGroup.get('numCompte').errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire   et  doit contenir uniquement des chiffres
+                </div>
+                
+               <div *ngIf="budgetFormGroup.get('numCompte').errors?.['pattern']" class="alert alert-danger">
+                Veuillez entrer au moins 4 caractères dans ce champ
+               </div>   
+             </div>
+    
+              <label for="inputtext"  class="colorspan">Num Compte</label>
+          </span>
+      </div>
+      <!--typeFinancement-->
+      <div class="field col-6 md:col-4">
+        <span class="p-float-label">
+            <input formControlName="typeFinancement" type="text"  pattern="[A-Za-z]{6}" id="inputtext" pInputText  name="typeFinancement" [(ngModel)]="newBudget.typeFinancement"  value="" required > 
+            <div *ngIf="budgetFormGroup.get('typeFinancement').invalid && (budgetFormGroup.get('typeFinancement').dirty || budgetFormGroup.get('typeFinancement').touched)"
+    class="alert "> 
+    <div *ngIf="budgetFormGroup.get('typeFinancement').errors?.['required']"  class="alert alert-danger">
+      Veuillez compléter ce champ obligatoire   et doit contenir du texte
+    </div>
+    
+   <div *ngIf="budgetFormGroup.get('typeFinancement').errors?.['pattern']" class="alert alert-danger">
+    "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+   </div>   
+    </div>
+            
+            <label for="inputtext"  class="colorspan"  >Type de financement</label>
+        </span>
+    </div>
+        
+       
+      </div>
+      
+      
+      <div class="row">
+        <br>
+      
+        <h2>coût total</h2>
+      
+        <br>
+        <!--budgetEstimme-->
+        <div class="col-6 md:col-4">
+          <div class="p-inputgroup">
+              <span class="   colorspan p-inputgroup-addon">DT</span>
+              <input formControlName="budgetEstimee" class=" colorspan" type="number" pInputText placeholder="Budget Estimé"    name=" budgetEstimee" [(ngModel)]="newBudget.budgetEstimee"   value="" required >   
+              <div *ngIf="budgetFormGroup.get('budgetEstimee').invalid && (budgetFormGroup.get('budgetEstimee').dirty ||budgetFormGroup.get('budgetEstimee').touched)"> 
+                <!--{{nomchef.errors|json}}-->
+                  <div *ngIf="budgetFormGroup.get('budgetEstimee').errors?.['required']"  class="alert alert-danger">
+                   Le champ de budget est obligatoire et doit être un nombre positif
+                  </div>
+                 
+                    
+               </div>
+              <span  class="p-inputgroup-addon  "></span>      
+          </div>
+      </div>
+      <!--budgetValidéé-->
+      <div class="col-6 md:col-4">
+        <div class="p-inputgroup">
+            <span class="  colorspan p-inputgroup-addon">DT</span>
+            <input formControlName="budgetValidee" type="text" pInputText placeholder="Budget Validé" name="  budgetValidee" [(ngModel)]="newBudget.budgetValidee"   value="" required>   
+            <div *ngIf=" budgetFormGroup.get('budgetValidee').invalid && ( budgetFormGroup.get('budgetValidee').dirty || budgetFormGroup.get('budgetValidee').touched)"> 
+              <!--{{nomchef.errors|json}}-->
+                <div *ngIf=" budgetFormGroup.get('budgetValidee').errors?.['required']"  class="alert alert-danger">
+                 Le champ de budget est obligatoire et doit être un nombre positif
+                </div> 
+             </div>
+            
+            <span class="p-inputgroup-addon"></span>      
+        </div>
+    </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <br>
+        
+        <h2>Calendrier de mise en oeuvre du projet(estimé)</h2>
+       
+        <br>
+        
+        <br>
+        
+       <div class="col-6">
+        <br>
+        <label  class="colorspan"  for="inputtext">Date date de début de la mise en oeuvre :</label><input formControlName="dateDebutMiseEnOeuvre" type="date"  name="soumission" name="dateDebutAchevement" [(ngModel)]="newBudget.dateDebutMiseEnOeuvre"   value="" required   minlength="1" >
+        <hr>
+     </div>
+     <div class="col-6">
+      <br>
+      <span class="p-float-label">
+      <input formControlName="delaiRealisation" type="number" id="inputnumber" pInputText   name="coutmisajour" name="delaisRealisationJour" [(ngModel)]="newBudget.delaiRealisation"   value="" required > 
+      
+      <div *ngIf="budgetFormGroup.get('delaiRealisation').invalid && (budgetFormGroup.get('delaiRealisation').dirty || budgetFormGroup.get('delaiRealisation').touched)"
+ class="alert"> 
+ <div *ngIf="budgetFormGroup.get('delaiRealisation').errors?.['required']"  class="alert alert-danger">
+  Veuillez compléter ce champ obligatoire avec un délai valide 
+  </div>
+ 
+ <div *ngIf="budgetFormGroup.get('delaiRealisation').errors?.['minlength']" class="alert alert-danger">
+  Veuillez entrer au moins 2caractères dans ce champ
+ </div> 
+      </div>
+      <label    class="colorspan" for="inputtext">Délais de réalisation (Jour) </label>
+         </span>
+   </div> 
+  
+      </div>
+    
+      <p-button label="Ajout" styleClass="p-button-primary"  [disabled]="!budgetFormGroup.valid"  (onClick)="ajoutnew()"></p-button>
+    </form>
+   
+   
+  </p-tabPanel>
+
+
+</p-tabView>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 

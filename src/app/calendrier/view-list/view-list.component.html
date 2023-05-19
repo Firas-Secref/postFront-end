@@ -1,0 +1,78 @@
+
+<div  class=" row bajout">
+  <br>
+  <div class="col-10">
+    <br>
+    <p  >Calendrier</p></div>
+  <div class=" bouton col-2" >
+    <button  (click)="ajoutProjet()" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded " style="background-color:rgb(255,194,36); color: #023674; width: 60px;" ></button>
+  </div>
+</div>
+
+
+ <div class="container">
+  <div class="tab">
+    <p-table [value]="projetList">
+      <ng-template pTemplate="header" >
+        <tr>
+          <th>Nature Projet</th>
+          <th>Sujet </th>
+          <th>Ordonnateur</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+     
+      <ng-template pTemplate="body" let-projet  >
+        <tr>
+          <td> {{projet.natureProjectName}}</td>
+          <td>{{projet.sujet}}</td>
+          <td> {{projet.ordonnateur}}</td>
+          <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left"  style="background-color:rgb(16,21,94); color:#fff; width: 50px;"  (click)="updateProject(projet.idCa)"></button></td>
+          <td><button pButton type="button" icon="pi pi-trash" iconPos="left"  style="background-color:rgb(246,0,0); color:#fff; width: 50px;"  (click)="deleteProject(projet)"></button></td>
+          <td><button pButton type="button" icon="pi pi-save" iconPos="left"  (click)="detailsProjet(projet.idCa)"   style="background-color:rgb(16,21,94); color:#fff; width: 50px;"> </button></td>
+          
+        </tr>
+      </ng-template>
+    </p-table>
+    </div>
+ </div>  
+    
+
+
+  
+<!--
+    <div class="headerboutton">
+     
+      <div class="btn-group">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Annéé
+        </button>
+        <ul class="dropdown-menu">
+          <li>2023</li>
+          <li>2022</li>
+          <li>2021</li>
+          <li>2020</li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-secondary btn-lg" type="button">
+          Direction d'achat
+        </button>
+        <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li> informatiques</li>
+            <li> divers</li>
+        </ul>
+    
+       
+       
+      </div>
+        -->
+
+
+
+

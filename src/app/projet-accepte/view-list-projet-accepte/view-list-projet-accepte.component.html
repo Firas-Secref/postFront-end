@@ -1,0 +1,46 @@
+<div>
+    <div class="row">
+      <div class="col-6" >
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetId">
+          <option value="-1" disabled selected>Sélectionner</option>
+          <option  *ngFor="let p of projetList" [value]="p.id">{{p.sujet}}</option>
+        </select>
+      </div>
+      <div class="col-6 ">
+        <label for="">choisir coleur</label>
+        <input type="color" name="couleur" class="form-control"> 
+
+      </div>
+     
+    </div>
+    <br>
+    
+
+    
+    <div class="row">
+      <div class="col-6   colorspan">
+         <span>Date début projet</span>
+      </div>
+      <div class="col-6">
+        <!--[(ngModel)]="newprojet.DateTransmissionComite"  value="" required #comite="ngModel"-->
+         <input type="date"  name="comite" value="" required >
+         <hr>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6   colorspan">
+           <span>Date fin projet</span>
+        </div>
+        <div class="col-6">
+          <!--[(ngModel)]="newprojet.DateTransmissionComite"  value="" required #comite="ngModel"-->
+           <input type="date"  name="comite" value="" required >
+           <hr>
+        </div>
+      </div>
+         
+    
+   </div>
+    <!--(click)="ajoutBudget()" -->
+    <button  pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-secondary " ></button>
+  
+</div>

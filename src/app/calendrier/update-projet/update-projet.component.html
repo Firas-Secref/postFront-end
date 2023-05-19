@@ -1,0 +1,244 @@
+<div class="row   ajout">
+   <div class="col-6">Modifier le  Projet</div>
+  </div>
+<div class="row formulaire" >
+    <p-tabView [activeIndex]="activeIndex" >
+        <p-tabPanel header="Création de la carte" >
+           <form   #projetone="ngForm" >
+             <div class="row">
+               <div class="col-4">
+                  <label for="exampleInputEmail1">Direction d'achat:</label>
+                  <br>
+            
+                  <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetupdate.directionachat" name="directionachat" required #directionachat="ngModel" >
+                     <option *ngFor="let d of directionAchatList " [value]="d.id">{{d.achatDirection}}</option>
+                  </select>
+               </div>
+               <!--type achat-->
+               <div class="col-4">
+                  <label for="exampleInputEmail1">Type d'achat:</label>
+                  <br>
+            
+                  <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetupdate.typeA" name="typeachat" required #typeachat="ngModel" >
+                     <option *ngFor="let a of typeAchatList " [value]="a.id">{{a.achatType}}</option>
+                  </select>
+               </div>
+               <!--nature projet-->
+               <div class="col-4">
+                  <label for="exampleInputEmail1">Nature de projet:</label>
+                  <br>
+            
+                  <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetupdate.natureprojet" name="natureprojet" required #natureprojet="ngModel" >
+                     <option *ngFor="let n of natureProjetList " [value]="n.id">{{n.nature}}</option>
+                  </select>
+               </div>
+               <!--region-->  
+               <div class="col-4">
+                  <label for="exampleInputEmail1">Region:</label>
+                  <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetupdate.region" name="region"   required #regin="ngModel">
+                 <option *ngFor="let r of regionList " [value]="r.id">{{r.nomRegion}}</option>
+                  </select>
+
+               </div>
+               
+            </div>
+            
+             
+               
+            
+            
+         
+            <br>
+            <div class="row">
+               <!--sujet-->
+               
+                  <span class=" row p-float-label">
+                     <input type="text" id="inputtext" pInputText  [(ngModel)]="projetupdate.sujet"  name="sujet"    required #sujet="ngModel" pattern="[A-Za-z\s]+"> 
+                     <div *ngIf="sujet.invalid && (sujet.dirty ||sujet.touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="sujet.errors?.['required']"  class="alert alert-danger">
+                            Veuillez compléter ce champ obligatoire et doit contenir du texte
+                          </div>
+                          
+                          <div *ngIf="sujet.errors?.['pattern']" class="alert alert-danger">
+                           "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                          </div>   
+                       </div>
+                     <label for="inputtext"  >Sujet</label>
+                 </span>
+                </div>   
+                <br>       
+   
+             
+             <!--ordonnateur-->
+              <div class="row">
+                 <div class="col-6">
+                   <span class="p-float-label">
+                      <input type="text" id="inputtext" pInputText  [(ngModel)]="projetupdate.ordonnateur"  name="ordonnateur"    pattern="[A-Za-z\s]+" required #ordonnateur="ngModel"> 
+                      <div *ngIf="ordonnateur.invalid && (ordonnateur.dirty ||ordonnateur.touched)"> 
+                       
+                        <div *ngIf="ordonnateur.errors?.['required']"  class="alert alert-danger">
+                          Veuillez compléter ce champ obligatoire  et doit contenir du texte
+                        </div>
+                        
+                       <div *ngIf="ordonnateur.errors?.['pattern']" class="alert alert-danger">
+                        "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                       </div>   
+                     </div>
+                      <label for="inputtext">Ordonnateur</label>
+                  </span>
+                 </div>
+                 <!--numcompte-->
+                 <div class="col-6">
+                   <span class="p-float-label">
+                      <input type="text" id="inputtext" pInputText  [(ngModel)]="projetupdate.numCompte"  name="numcompte"  value=""   minlength="4" required #numcompte="ngModel"> 
+                      <div *ngIf="numcompte.invalid && (numcompte.dirty ||numcompte.touched)"> 
+                       
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="numcompte.errors?.['required']"  class="alert alert-danger">
+                            Veuillez compléter ce champ obligatoire et doit contenir uniquement des chiffres
+                          </div>
+                         
+                         <div *ngIf="numcompte.errors?.['minlength']" class="alert alert-danger">
+                          Veuillez entrer au moins 4 caractères dans ce champ
+                         </div>   
+                       </div>
+                      <label for="inputtext">NumCompte</label>
+                  </span>
+                 </div>
+              </div>
+              <br>
+              <!--budgetI-->
+              <div class="row">
+                <div class="col-6">
+                   <span class="p-float-label">
+                      <input type="number" id="inputnumber" pInputText  [(ngModel)]="projetupdate.coutInitial"  name="coutinitial"  value=""  required  #coutinitial="ngModel"   minlength="4"> 
+                      <div *ngIf="coutinitial.invalid && (coutinitial.dirty ||coutinitial.touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="coutinitial.errors?.['required']"  class="alert alert-danger">
+                           Le champ de budget est obligatoire et doit être un nombre positif
+                          </div>
+                         
+                            
+                       </div>
+                      <label for="inputtext">Budget Initial </label>
+                      </span>
+                </div>
+                 <!--budgetJour-->
+                <div class="col-6">
+                   <span class="p-float-label">
+                      <input type="number" id="inputnumber" pInputText  [(ngModel)]="projetupdate.coutMisAjour"  name="coutmisajour" value=""  required #coutmisajour="ngModel"> 
+                      <div *ngIf="coutmisajour.invalid && (coutmisajour.dirty ||coutmisajour.touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="coutmisajour.errors?.['required']"  class="alert alert-danger">
+                           Le champ de budget est obligatoire et doit être un nombre positif
+                          </div>
+                         
+                            
+                       </div>
+                      <label for="inputtext">Budget mise a jour </label>
+                      </span>
+                </div> 
+              </div>
+              <br>
+              
+                
+               <p-button label="demarrer" styleClass="p-button-primary"   [disabled]="!projetone.form.valid"       (onClick)="activeIndex=1"></p-button>
+            </form>
+ 
+         </p-tabPanel>
+
+         <!--CalendrierPrevisionnel-->
+        <p-tabPanel header="Calendrier prévisionnel">
+         <form    #projet="ngForm">
+            <div class="row">
+                     <span class="p-float-label">
+                        <input type="text" id="inputtext" pInputText  [(ngModel)]="projetupdate.responsable"  name="responsable" value=""  pattern="[A-Za-z\s]+" required #responsable="ngModel" class="responsable"> 
+                        <div *ngIf="responsable.invalid && (responsable.dirty ||responsable.touched)"> 
+                           <!--{{nomchef.errors|json}}-->
+                             <div *ngIf="responsable.errors?.['required']"  class="alert alert-danger">
+                               Veuillez compléter ce champ obligatoire et doit contenir du texte
+                             </div>
+                             
+                            <div *ngIf="responsable.errors?.['pattern']" class="alert alert-danger">
+                              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                            </div>   
+                          </div>
+                        
+                        <label for="inputtext">Responsable du dossier</label>
+                       
+                     </span> 
+
+            </div>
+            <hr>
+            <div class="row">
+               <div class="col-6   colorspan">
+                  <span>Date d'approbation du cahier des charges:</span>
+               </div>
+               <div class="col-6">
+                  <input type="date" name="datecahier" [(ngModel)]="projetupdate.dateAgrementSpecifications" value="" required #datacahier="ngModel">
+                  <hr>
+               
+               </div>
+                  
+            </div>
+            <div class="row">
+               <div class="col-6  colorspan">
+                  <span>Date d'annonce de concours/Début de négociation:</span>
+               </div>
+               <div class="col-6">
+                  <input type="date"  name="negociation" [(ngModel)]="projetupdate.dateNegociation" value="" required #negociation="ngModel">
+                  <hr>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-6  colorspan">
+                  <span>Date d'ouverture des soumissions :</span>
+               </div>
+               <div class="col-6">
+                  <input type="date"  name="soumission" [(ngModel)]="projetupdate.dateOuvertureSoumission"  value="" required #soumission="ngModel">
+                  <hr>
+               </div>
+                  
+               
+            </div>
+            <div class="row">
+               <div class="col-6   colorspan">
+                  <span>La date à la quelle le dossier a été transmis au commité des achats</span>
+               </div>
+               <div class="col-6">
+                  <input type="date"  name="comite" [(ngModel)]="projetupdate.dateTransmissionComite"  value="" required #comite="ngModel">
+                  <hr>
+               </div>
+                  
+             
+            </div>
+
+            <div class="row">
+               <div class="col-6    colorspan">
+                  <span>Date de réponse du comité de suivi</span>
+               </div>
+               <div class="col-6   colorspan">
+                  <input type="date"  name="conseil" [(ngModel)]="projetupdate.dateReponseCommite" value="" required #conseil="ngModel">
+                  <hr>
+               </div>
+            
+
+            </div>
+            
+             <p-button label="Modifier" styleClass="p-button-primary"   [disabled]="!projet.form.valid"  (onClick)="update()"></p-button>
+           </form>
+        </p-tabPanel>
+      
+    </p-tabView>
+
+
+   
+
+
+
+
+
+
+
+

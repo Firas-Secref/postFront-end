@@ -1,0 +1,224 @@
+<div class="row   update">
+  <div class="col-6"> Update Projet</div>
+ </div>
+<div class="row formulaire">
+<p-scrollPanel [style]="{width: '100%', height: '600px'}"  styleClass="custom">
+  <p-tabView  >
+<!--Les personnes imlpiquées dans la mise en oeuvre du projet-->
+  <p-tabPanel  header="Les personnes imlpiquées dans la mise en oeuvre du projet" >
+    <form   #fiche="ngForm">
+      <br>
+      
+    <!--Chef de projet-->
+    <h2 class="titre">Chef de projet</h2>
+    <br>
+    <div class="row" >
+      <!--nom-->
+     <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+      
+       <label for="exampleInputEmail1">Nom et prénon</label>
+       <input type="text" class="form-control"  placeholder=""  [(ngModel)]="ficheupdate.nomChefProjet"  value=""  required  minlength="4"   #nomchef="ngModel"  name="nomchef"   pattern="[A-Za-z\s]+">
+       <div *ngIf="nomchef.invalid && (nomchef.dirty || nomchef.touched)"class="alert"> 
+        <!--{{nomchef.errors|json}}-->
+          <div *ngIf="nomchef.errors?.['required']"  class="alert alert-danger">
+            Veuillez compléter ce champ obligatoire   et doit contenir du texte
+          </div>
+          
+         <div *ngIf="nomchef.errors?.['minlength']" class="alert alert-danger">
+          Veuillez entrer au moins 4 caractères dans ce champ
+         </div>  
+         <div *ngIf="nomchef.errors?.['pattern']" class="alert alert-danger">
+          "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+         </div>  
+       </div>
+    </div>
+
+     <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+       <label for="exampleInputEmail1">Titre</label>
+       <input type="text" class="form-control"  placeholder="" [(ngModel)]="ficheupdate.gradeChefProjet"   value=""  required   required #titrechef="ngModel"  name="titrechef"   pattern="[A-Za-z\s]+">
+       <div *ngIf="titrechef.invalid && (titrechef.dirty || titrechef.touched)"class="alert"> 
+        <div *ngIf="titrechef.errors?.['required']"  class="alert alert-danger">
+          Veuillez compléter ce champ obligatoire  et doit contenir du texte
+          </div>
+          <div *ngIf="titrechef.errors?.['pattern']" class="alert alert-danger">
+            "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+           </div>  
+      </div>
+      </div>
+
+
+     <div class="form-group col-3" *ngIf="ficheupdate != undefined" required  >
+       <label for="exampleInputEmail1"> Numéro de Téléphone</label>
+       <br>
+       
+       <input type="number" class="form-control" placeholder="" [(ngModel)]="ficheupdate.telChefProjet" value=""  required #telchef="ngModel" name="telchef"   pattern="\d{8,}">
+       <div *ngIf="telchef.invalid && (telchef.dirty || telchef.touched)"class="alert"> 
+        <div *ngIf="telchef.errors?.['required']"  class="alert alert-danger">
+          Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+          </div>
+         
+          <div *ngIf="telchef.errors?.['pattern']" class="alert alert-danger">
+            "Veuillez entrer un nombre d'au moins 8 chiffres"
+          </div>  
+      </div>
+      </div>
+
+
+     <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+       <label for="exampleInputEmail1">Adresse Email</label>
+       
+       <input type="email" class="form-control"    [(ngModel)]="ficheupdate.emailChefProjet" value="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required #emailchef="ngModel"   email name=" emailchef" >
+       <div *ngIf="emailchef.invalid && (emailchef.dirty || emailchef.touched)" class="alert">
+        <div *ngIf="emailchef.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+        <div *ngIf="emailchef.errors?.['pattern']"  class="alert alert-danger">Veuillez entrer une adresse e-mail valide</div>
+      </div>
+      </div>
+    
+</div>
+   
+    <br>
+
+
+    <!--Le répresentant de l'Ordonnateur-->
+    <br>
+    <h2 class="titre">Le répresentant de l'Ordonnateur</h2>
+    <br>
+    <div class="row">
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Nom et prénon</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder=""  required [(ngModel)]="ficheupdate.nomOrdonnateur" value=""    required #nomordonnateur="ngModel" name="nomordonnateur" pattern="[A-Za-z\s]+">
+        <div *ngIf="nomordonnateur.invalid && (nomordonnateur.dirty || nomordonnateur.touched)"class="alert"> 
+          <!--{{nomchef.errors|json}}-->
+            <div *ngIf="nomordonnateur.errors?.['required']"  class="alert alert-danger">
+              Veuillez compléter ce champ obligatoire  et doit contenir du texte
+            </div>
+            <div *ngIf="nomordonnateur.errors?.['pattern']" class="alert alert-danger">
+              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+             </div>  
+         </div>
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Titre</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [(ngModel)]="ficheupdate.gradeOrdonnateur" value=""  required #titreordonnateur="ngModel" name="titreordonnateur" pattern="[A-Za-z\s]+">
+        <div *ngIf="titreordonnateur.invalid && (titreordonnateur.dirty ||titreordonnateur.touched)"class="alert"> 
+          <!--{{nomchef.errors|json}}-->
+            <div *ngIf="titreordonnateur.errors?.['required']"  class="alert alert-danger">
+              Veuillez compléter ce champ obligatoire  et doit contenir du texte
+            </div>
+            <div *ngIf="titreordonnateur.errors?.['pattern']" class="alert alert-danger">
+              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+             </div> 
+            
+             
+         </div>
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Télephone</label>
+        <br>
+        <input type="number" class="form-control"  aria-describedby="emailHelp"   [(ngModel)]="ficheupdate.telOrdonnateur"  value=""  name="telordonnateur" required #telordonnateur="ngModel"   pattern="\d{8,}">
+      
+        <div *ngIf="telordonnateur.invalid && (telordonnateur.dirty || telordonnateur.touched)"class="alert"> 
+          <div *ngIf="telordonnateur.errors?.['required']"  class="alert alert-danger">
+            Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+            </div>
+           
+           <div *ngIf="telordonnateur.errors?.['pattern']" class="alert alert-danger">
+             "Veuillez entrer un nombre d'au moins 8 chiffres"
+           </div> 
+        </div>
+        
+      
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Adresse Email</label>
+        <br>
+        <input type="email" class="form-control"    [(ngModel)]="ficheupdate.emailOrdonnateur" value="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required #emailordonnateur="ngModel"   email name="emailordonnateur" >
+          <div *ngIf="emailordonnateur.invalid && (emailordonnateur.dirty ||emailordonnateur.touched)" class="alert">
+          <div *ngIf="emailordonnateur.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+           <div *ngIf="emailordonnateur.errors?.['pattern']"  class="alert alert-danger">Veuillez entrer une adresse e-mail valide</div>
+         </div>
+        
+      </div>
+    </div>
+    <br>
+    
+    <br>
+    <h2 class="titre">Le répresentant de service d'achat concerné</h2>
+    <br>
+    <div class="row">
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Nom et prénon</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nomservice" [(ngModel)]="ficheupdate.nomRepresentantService"   minlength="4"  value=""  required #nomservice="ngModel" pattern="[A-Za-z\s]+">
+        <div *ngIf="nomservice.invalid && (nomservice.dirty || nomservice.touched)"class="alert"> 
+          <div *ngIf="nomservice.errors?.['required']"  class="alert alert-danger">
+            Veuillez compléter ce champ obligatoire  et doit contenir du texte
+            </div>
+           <div *ngIf="nomservice.errors?.['pattern']" class="alert alert-danger">
+            "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+           </div> 
+        </div>
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Titre</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="titreservice" [(ngModel)]="ficheupdate.gradeRepresentantService"  value=""    required #titreservice="ngModel" pattern="[A-Za-z\s]+">
+        <div *ngIf="titreservice.invalid && (titreservice.dirty || titreservice.touched)"class="alert"> 
+          <div *ngIf="titreservice.errors?.['required']"  class="alert alert-danger">
+            Veuillez compléter ce champ obligatoire  et doit contenir du texte
+            </div>
+          
+            
+            <div *ngIf="titreservice.errors?.['pattern']" class="alert alert-danger">
+              "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+             </div>  
+        </div>
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Numéro de Téléphone</label>
+        <br>
+        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="ficheupdate.telRepresentantService"   name="telservice" value=""  required #telservice="ngModel"   pattern="\d{8,}">
+        <div *ngIf="telservice.invalid && (telservice.dirty || telservice.touched)"class="alert"> 
+          <div *ngIf="telservice.errors?.['required']"  class="alert alert-danger">
+            Veuillez compléter ce champ obligatoire avec un numéro de téléphone valide 
+            </div>
+           
+           <div *ngIf="telservice.errors?.['pattern']" class="alert alert-danger">
+            "Veuillez entrer un nombre d'au moins 8 chiffres"
+           </div> 
+        </div>
+     
+      </div>
+      <div class="form-group col-3" *ngIf="ficheupdate != undefined">
+        <label for="exampleInputEmail1">Adresse Email</label>
+        <br>
+        <input type="email" class="form-control"    [(ngModel)]="ficheupdate.emailRepresentantService" value="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required #emailservice="ngModel"   email name="emailservice" >
+          <div *ngIf="emailservice.invalid && (emailservice.dirty || emailservice.touched)" class="alert">
+          <div *ngIf="emailservice.errors?.['required']"   class="alert alert-danger">Veuillez compléter ce champ obligatoire</div>
+           <div *ngIf="emailservice.errors?.['pattern']"  class="alert alert-danger">Veuillez entrer une adresse e-mail valide</div>
+         </div>
+      </div>
+</div>
+     
+
+  
+    <tr>
+    <tr>
+    <br>
+      <p-button label="Update" styleClass="p-button-primary"     [disabled]="!fiche.form.valid" (click)="updatefiche()"></p-button>
+    </form>
+  
+    
+  </p-tabPanel>
+</p-tabView>
+</p-scrollPanel>
+
+
+
+
+
+
+
+
+
+
+
+</div>

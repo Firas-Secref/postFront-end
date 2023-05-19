@@ -1,0 +1,121 @@
+<div class="row   update">
+  <div class="col-6">Update Etude bugétaire</div>
+ </div>
+<div class="row formulaire">
+<p-scrollPanel [style]="{width: '100%', height: '400px'}" >
+  <p-tabView>
+    <p-tabPanel header="Etude de budget" >
+      <form [formGroup]="budgetFormGroup" #budget="ngForm">
+        <br>
+        <div class="row">
+          <br>
+    <div class="field col-6 md:col-4">
+            <span class="p-float-label">
+                <input formControlName="numCompte" type="number" id="inputtext" pInputText  name="numcompte" [(ngModel)]="budgetupdate.numCompte" value="" required  pattern="\d{4,}" >
+                <div style="color:red;" *ngIf="budgetFormGroup.get('numCompte').invalid && (budgetFormGroup.get('numCompte').dirty || budgetFormGroup.get('numCompte').touched)"
+      class="alert"> 
+      <div *ngIf="budgetFormGroup.get('numCompte').errors?.['required']"  class="alert alert-danger">
+        Veuillez compléter ce champ obligatoire et doit contenir uniquement des chiffres
+      </div>
+     
+     <div *ngIf="budgetFormGroup.get('numCompte').errors?.['pattern']" class="alert alert-danger">
+       "Veuillez entrer un nombre d'au moins 4 chiffres"
+     </div>   
+   
+      </div>
+      <label for="inputtext" class="colorspan">Num Compte</label>
+            </span>
+      </div>
+
+        
+        <div class="field col-6 md:col-4">
+          <span class="p-float-label">
+              <input formControlName="typeFinancement" type="text" id="inputtext" pInputText  name=" typefinancement"  value="" [(ngModel)]="budgetupdate.typeFinancement"  pattern="[A-Za-z\s]+" required > 
+              <div *ngIf="budgetFormGroup.get('typeFinancement').invalid && (budgetFormGroup.get('typeFinancement').dirty ||budgetFormGroup.get('typeFinancement').touched)"> 
+                       
+                <div *ngIf="budgetFormGroup.get('typeFinancement').errors?.['required']"  class="alert alert-danger">
+                  Veuillez compléter ce champ obligatoire  et doit contenir uniquement des chiffres
+                </div>
+               <div *ngIf="budgetFormGroup.get('typeFinancement').errors?.['pattern']" class="alert alert-danger">
+                 "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                </div>  
+
+             </div>
+              <label for="inputtext" class="colorspan">Source de financement</label>
+          </span>
+      </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <br>
+        <h2>coût total</h2>
+          <br>
+          <!--budgetEstimme-->
+          <div class="col-6 md:col-4">
+            <div class="    p-inputgroup">
+                <span class=" colorspan p-inputgroup-addon">DT</span>
+                <input formControlName="budgetEstimee" type="number" pInputText placeholder="Budget Estimee"   name=" budgetEstimee" [(ngModel)]="budgetupdate.budgetEstimee"  value="" required >   
+                <div *ngIf="budgetFormGroup.get('budgetEstimee').invalid && (budgetFormGroup.get('budgetEstimee').dirty ||budgetFormGroup.get('budgetEstimee').touched)"> 
+                  <!--{{nomchef.errors|json}}-->
+                    <div *ngIf="budgetFormGroup.get('budgetEstimee').errors?.['required']"  class="alert alert-danger">
+                     Le champ de budget est obligatoire et doit être un nombre positif
+                    </div>
+                   
+                      
+                 </div>
+                <span class="p-inputgroup-addon"></span> 
+                
+            </div>
+        </div>
+        <!--budgetEstimme-->
+        <div class="col-6 md:col-4">
+          <div class="p-inputgroup">
+              <span class="  colorspan p-inputgroup-addon">DT</span>
+              <input formControlName="budgetValidee" type="number" pInputText placeholder="Budget Validée" name="  budgetValidee" [(ngModel)]="budgetupdate.budgetValidee"   value="" required >   
+              <div *ngIf=" budgetFormGroup.get('budgetValidee').invalid && ( budgetFormGroup.get('budgetValidee').dirty || budgetFormGroup.get('budgetValidee').touched)"> 
+                <!--{{nomchef.errors|json}}-->
+                  <div *ngIf=" budgetFormGroup.get('budgetValidee').errors?.['required']"  class="alert alert-danger">
+                   Le champ de budget est obligatoire et doit être un nombre positif
+                  </div> 
+               </div>
+              <span class="p-inputgroup-addon"></span>      
+          </div>
+      </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <br>
+          
+          <h2>Calendrier de mise en oeuvre du projet(estimé)</h2>
+          <br>
+          <br>
+         <div class="col-6">
+          <br>
+          <label class="colorspan">date de début de la mise en oeuvre:</label><input formControlName="dateDebutMiseEnOeuvre" type="date"  name="soumission" name="dateDebutAchevement" [(ngModel)]="budgetupdate.dateDebutMiseEnOeuvre">
+          <hr>
+       </div>
+       <div class="col-6">
+        <br>
+        <span class="p-float-label">
+         
+           <input formControlName="delaiRealisation" type="number" id="inputnumber" pInputText   value="" name="delaisRealisationJour" [(ngModel)]="budgetupdate.delaiRealisation"> 
+           <label class="colorspan" for="inputtext">Délais de réalisation (Jour) </label>
+           </span>
+     </div> 
+    
+        </div>
+  
+        <p-button label="Update " style="background-color: yellow; color: rgb(203, 203, 104); width: 80px;" [disabled]="!budget.form.valid" (onClick)="updatebudget() " ></p-button>
+       
+
+      </form>
+     
+     
+    </p-tabPanel>
+  
+  </p-tabView>
+</p-scrollPanel>
+
+</div>

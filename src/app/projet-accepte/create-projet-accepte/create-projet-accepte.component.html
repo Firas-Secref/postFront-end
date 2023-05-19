@@ -1,0 +1,52 @@
+<div class="container" >
+<!--Bouton Ajout proejt Accepte-->
+     <div class="boutton">
+        <!-- <button  (click)="showDialog()" pButton pRipple type="button" value="ajouter" icon="pi pi-plus" class="p-button-rounded "   style="background-color:rgb(255,194,36); color: #023674; width: 60px;"></button> -->
+     </div>
+<!--full Calender-->
+    <full-calendar [options]="calendarOptions"></full-calendar>
+</div>
+
+<p-dialog  class="header"  header="Projet Accepté"   [(visible)]="display">
+    <form [formGroup]="projectForm"  #projetAccepte="ngForm" (ngSubmit)="submitForm()">
+        <div class="row">
+            <select formControlName="project" class="form-select" aria-label="Default select example" >
+              <option value="-1" disabled selected>Sélectionner</option>
+              <option  *ngFor="let p of projetList" [value]="p.idCa">{{p.sujet}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="row">
+                <label for="">choisir couleur</label>
+                <input formControlName="color" type="color" name="couleur" class="form-control" value=""   required>    
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-4   colorspan">
+             <span>Date début projet:</span>
+          </div>
+          <div class="col-4">
+             <input formControlName="startDate" type="date"  name="dateDebutProjet" value="" required     >
+             <hr>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4   colorspan">
+               <span>Date fin projet:</span>
+            </div>
+            <div class="col-4">
+               <input formControlName="endDate" type="date"  name="dateAchevemetProjet" value="" required>
+               <hr>
+            </div>
+          </div>
+             
+        
+       </div> 
+        <div class="button"> 
+            <input type="submit" value="ajouter">
+
+        </div>
+      
+      </form>
+   
+</p-dialog>

@@ -1,0 +1,118 @@
+<div class="row">
+<p-tabView>
+    <p-tabPanel header="Création de la carte" >
+       <form>
+         <div class="row">
+            <div class="col-6">
+              
+        <br>
+        <br>
+        <label >Programme Besoin:</label>
+        <select name="plb" [(ngModel)]="planning.programmeBesoin">
+         <option *ngFor="let p of programmesBesoin" [value]="p.id">{{p.label_fr}}</option>
+        </select>
+        <p-dropdown [options]="programmesBesoin" 
+        optionValue="id" name="plbesoin"
+        [autoDisplayFirst]="false" [filter]="true"
+        optionLabel="label_fr" [(ngModel)]="planning.programmeBesoin"></p-dropdown>
+        <br>
+        
+        <br>
+        <label>Contexte Besoin:</label><p-dropdown  optionLabel="name" [(ngModel)]="planning.contexteBesoin"></p-dropdown>
+        <br>
+        <br>
+        <br>
+        <label> Besoin:</label><input type="text"  [(ngModel)]="planning.besoin">
+        <br>
+        <br>
+        <label>Region:</label><input type="text">
+        <br>
+        <br>
+        <label>Ordonnateur:</label><input type="text">
+        <br>
+        <br>
+            </div>
+            <div class="col-6">
+               <label>Numcompte :</label><input type="text"  >
+        <br>
+        <br>
+        <label>Coutinitial :</label><input type="text">
+        <br>
+        <br>
+        <label>Coutmisajour :</label><input type="text">
+        <br>
+        <br>
+        <label> Coutmisajourautre :</label><input type="text">
+        <br>
+        <br>
+        <label>Promesses :</label><input type="text">
+        <br>
+        <br>
+        <label>Paiements :</label><input type="text">
+        <br>
+        <br>
+            </div>
+         </div>
+        <label>Methode de conclusion suggérée:</label><p-dropdown  optionLabel="name"></p-dropdown>
+        <br>
+        <br>
+        <label>Date prévu d'envoi de dossier:</label><input type="date"  >
+        <br>
+        <br>
+        <label>Date d'avis proposé:</label><input type="date"  >
+        <br>
+        <br>
+        
+       </form>
+    </p-tabPanel>
+    <p-tabPanel header="Calendrier prévisionnel">
+        <form>
+           <span>Méthode de conclusion suggérée:</span> <input type="text"  >
+           <br>
+           <br>
+           <span>Délais des offres:</span> <input type="text"  >
+           <br>
+           <br>
+           <span>Délais de mise en œuvre:</span> <input type="text"  >
+           <br>
+           <br>
+           <span>Responsable dossier:</span> <input type="text"  >
+           <br>
+           <br>
+        <span>Date d'approbation du cahier des charges:</span><input type="date">
+        <br>
+        <br>
+        <span>Date d'annonce de concours/Début de négociation:</span><input type="date">
+       <br>
+       <br>
+        <span>Date d'ouverture des soumissions :</span><input type="date">
+       <br>
+       <br>
+        <span>La date à la quelle le dossier a été transmis au commité des transaction /achats:</span><input type="date">
+        <br>
+        <br>
+        <span>Date de réponse du comité de suivi/Conseil d'administration:</span><input type="date">
+        <br>
+        <br>
+        <span>Date d'ouverture des soumissions :</span><input type="date">
+        <br>
+        <br>
+        <span>Date de notification :</span><input type="date">
+        <br>
+        <br>
+        <span>Date de début de réalisation  :</span><input type="date">
+         
+           </form>
+    </p-tabPanel>   
+</p-tabView>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+

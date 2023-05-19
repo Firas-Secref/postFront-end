@@ -1,0 +1,252 @@
+<div class="row   titre">
+   <div class="col-6"> Ajout de Projet</div>
+  </div>
+<div class="container  formulaire" >
+
+
+    <p-tabView [activeIndex]="activeIndex" >
+        <p-tabPanel   header="Création de la carte"  >
+           <form [formGroup]="projectForm">
+            <br>
+           
+            <div class="row">
+               <!--
+                  <div class="col-4">
+                 
+                   <label for="exampleInputEmail1">Direction d'achat:</label>
+                   <br>
+                   <select class="form-select" aria-label="Default select example"  [(ngModel)]="newprojet.directionachat" name="directionachat"   value=""  required #directionachat="ngModel">
+                      <option *ngFor="let d of directionAchatList " [value]="d.id">{{d.achatDirection}}</option>
+                   </select>
+                </div>
+               -->
+               
+
+               <div class="col-4">
+                  <!--type achat-->
+                 <label for="exampleInputEmail1">Type D'achat:</label>
+                 <br>
+                 <select formControlName="typeA" class="form-select" aria-label="Default select example"  [(ngModel)]="newprojet.typeachat" name="typeachat"   value=""  required>
+                    <option *ngFor="let a of typeAchatList" [value]="a.id">{{a. achatType}}</option>
+                 </select>
+              </div>
+               <div class="col-4">
+                  <!--NatureProjet-->
+                 <label for="exampleInputEmail1">Nature de projet:</label>
+                 <br>
+                 <select formControlName="natureProjets" class="form-select" aria-label="Default select example"  [(ngModel)]="newprojet.natureprojet" name="natureprojet"   value=""  required >
+                    <option *ngFor="let n of natureProjetList " [value]="n.id">{{n.nature}}</option>
+                 </select>
+              </div>
+               <div class="col-4">
+                  <!--region-->
+                  <label for="exampleInputEmail1">Region:</label>
+                  <br>
+                  <select formControlName="regionId" class="form-select" aria-label="Default select example"  name="region"  value=""  required >
+                    <option *ngFor="let r of regionList " [value]="r.id">{{r.nomRegion}}</option>
+                  </select>
+               </div> 
+            </div>
+            <br>
+            
+               <!--Sujet-->
+                  <span class=" row p-float-label">
+                     <input formControlName="sujet" type="text" id="inputtext" pInputText  [(ngModel)]="newprojet.sujet"  name="Sujet"  name="Sujet" value=""  required       pattern="[A-Za-z\s]+"> 
+                     <div *ngIf="projectForm.get('sujet').invalid && (projectForm.get('sujet').dirty ||projectForm.get('sujet').touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="projectForm.get('sujet').errors?.['required']"  class="alert alert-danger">
+                            Veuillez compléter ce champ obligatoire et doit contenir du texte
+                          </div>
+                          
+                          
+                         <div *ngIf="projectForm.get('sujet').errors?.['pattern']" class="alert alert-danger">
+                           "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                          </div>  
+                       </div>
+                     <label for="inputtext"  >Sujet</label>
+                 </span>
+               
+                <br>
+                <br>
+               
+           
+             <div class="row">
+                <div class="col-6">
+                  <span class="p-float-label">
+                      <!-- Ordonnateur-->
+                     <input formControlName="ordonnateurName" readonly type="text" id="inputtext" pInputText name=" Ordonnateur"   value=""    required    pattern="[A-Za-z\s]+" > 
+                  
+                     
+                  
+                     <label for="inputtext">Ordonnateur</label>
+                 </span>
+                </div>
+                <!--numcompte-->
+                <div class="col-6">
+                  <span class="p-float-label">
+                     <input formControlName="numCompte" type="number" id="inputnumber" pInputText   name="Numcompte"   name="Numcompte"   value=""   required    pattern="\d{4,}"   > 
+                     <div *ngIf="projectForm.get('numCompte').invalid && (projectForm.get('numCompte').dirty ||projectForm.get('numCompte').touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="projectForm.get('numCompte').errors?.['required']"  class="alert alert-danger">
+                            Veuillez compléter ce champ obligatoire et doit contenir uniquement des chiffres
+                          </div>
+                         
+                         <div *ngIf="projectForm.get('numCompte').errors?.['pattern']" class="alert alert-danger">
+                           "Veuillez entrer un nombre d'au moins 4 chiffres"
+                         </div>   
+                       </div>
+                     <label for="inputtext">NumCompte</label>
+                 </span>
+                </div>
+             </div>
+             <br>
+             <!--budgetI-->
+             <div class="row">
+               <div class="col-6">
+                  <span class="p-float-label">
+                     <input formControlName="coutInitial" type="number" id="inputnumber" pInputText   name=" coutininitial"   value=""   required   > 
+                     <div *ngIf=" projectForm.get('coutInitial').invalid && ( projectForm.get('coutInitial').dirty || projectForm.get('coutInitial').touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf=" projectForm.get('coutInitial').errors?.['required']"  class="alert alert-danger">
+                           Le champ de budget est obligatoire et doit être un nombre positif
+                          </div>
+                         
+                            
+                       </div>
+                     <label for="inputtext">Budget Initial </label>
+                     </span>
+               </div>
+                <!--budgetJour-->
+               <div class="col-6">
+                  <span class="p-float-label">
+                     <input formControlName="coutMisAjour" type="number" id="inputnumber" pInputText  name="coutmisajour" value=""  required> 
+                     <div *ngIf="projectForm.get('coutMisAjour').invalid && (projectForm.get('coutMisAjour').dirty ||projectForm.get('coutMisAjour').touched)"> 
+                        <!--{{nomchef.errors|json}}-->
+                          <div *ngIf="projectForm.get('coutMisAjour').errors?.['required']"  class="alert alert-danger">
+                           Le champ de budget est obligatoire et doit être un nombre positif
+                          </div>
+                         
+                            
+                       </div>
+                     <label for="inputtext">Budget mise a jour </label>
+                     </span>
+               </div> 
+             </div>
+             <br>
+             <!--prommess
+             <div class="row">
+               <div class="col-6">
+                  <span class="p-float-label">
+                     <input type="number" id="inputnumber" pInputText  [(ngModel)]="newprojet.promesses"  name="promesses"> 
+                     <label for="inputtext">Promesses </label>
+                     </span>
+               </div>
+               paiement
+               <div class="col-6">
+                  <span class="p-float-label">
+                     <input type="number" id="inputnumber" pInputText  [(ngModel)]="newprojet.paiements"  name="paiements"> 
+                     <label for="inputtext">Paiements </label>
+                     </span>
+                  </div>
+
+             </div>
+            -->
+               
+           <p-button label="demarrer" styleClass="p-button-primary"    (onClick)="activeIndex=1"></p-button>
+           </form>
+
+        
+         </p-tabPanel>
+        <!--CalendrierPrevisionnel-->
+        <p-tabPanel header="Calendrier prévisionnel">
+            <form [formGroup]="projectForm2">
+               <div class="row">
+                        <span class="p-float-label">
+                           <input formControlName="responsable" type="text" id="inputtext" pInputText  name=" responsable" value=""  required  class=" responsable"   pattern="[A-Za-z\s]+"> 
+                           <div *ngIf=" projectForm2.get('responsable').invalid && ( projectForm2.get('responsable').dirty || projectForm2.get('responsable').touched)"> 
+                              <!--{{nomchef.errors|json}}-->
+                                <div *ngIf=" projectForm2.get('responsable').errors?.['required']"  class="alert alert-danger">
+                                  Veuillez compléter ce champ obligatoire et doit contenir du texte
+                                </div>
+                                
+                               <div *ngIf="projectForm2.get('responsable').errors?.['minlength']" class="alert alert-danger">
+                                Veuillez entrer au moins 4 caractères dans ce champ
+                               </div>   
+                               <div *ngIf="projectForm2.get('responsable').errors?.['pattern']" class="alert alert-danger">
+                                 "Veuillez entrer du texte valide (lettres et espaces uniquement)"
+                                </div> 
+                             </div>
+                           <label for="inputtext">Responsable du dossier</label>
+                          
+                        </span> 
+
+               </div>
+               <hr>
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>Date d'agrément des spécifications :</span>
+                  </div>
+                  <div class="col-6">
+                     <input formControlName="dateAgrementSpecifications" type="date" name="datecahier" value="" required >
+                     <hr>
+                  
+                  </div>
+                     
+               </div>
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'annonce de concours/Début de négociation:</span>
+                  </div>
+                  <div class="col-6">
+                     <input formControlName="dateNegociation" type="date"  name="negociation"  value="" required >
+                     <hr>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'ouverture des soumissions :</span>
+                  </div>
+                  <div class="col-6">
+                     <input formControlName="dateOuvertureSoumission" type="date"  name="soumission" value="" required >
+                     <hr>
+                  </div>
+                     
+                  
+               </div>
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>La date à la quelle le dossier a été transmis au commité des achats</span>
+                  </div>
+                  <div class="col-6">
+                     <input formControlName="dateTransmissionComite" type="date"  name="comite"  value="" required>
+                     <hr>
+                  </div>
+                     
+                
+               </div>
+
+               <div class="row">
+                  <div class="col-6    colorspan">
+                     <span>Date de réponse du comité de suivi</span>
+                  </div>
+                  <div class="col-6   colorspan">
+                     <input formControlName="dateReponseCommite" type="date"  name="conseil" value="" required>
+                     <hr>
+                  </div>
+               
+
+               </div>
+               
+            
+            <p-button label="Ajout" styleClass="p-button-primary"     (onClick)="ajout()"></p-button>
+           <br>
+             </form>
+        </p-tabPanel>
+    </p-tabView>
+
+</div>
+
+
+
+
+

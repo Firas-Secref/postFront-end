@@ -1,0 +1,55 @@
+<!--<div class="tout">
+    <div class="row ajout">
+        <p>Modifier nature Projet</p> 
+    </div>
+    <div class=" formulaire">
+        
+        <div class="row">
+            <form>     
+                
+                    <div class="form-group col-12">
+                        <span class="p-float-label">
+                            
+                           <input class="input" type="text" id="inputtext" pInputText  [(ngModel)]=" directionAchatUpdate. achatDirection"    name="natureProjet"> 
+                           <label for="inputtext"  >Nature Projet</label>
+                       </span>
+                      </div>
+                
+                 <p-button class="boutton" label="Modifier" styleClass="p-button-secondary" (onClick)="update()"  ></p-button>
+            </form>
+        </div>
+       
+    </div>
+</div>
+-->
+
+
+<div class="tout">
+    <div class="container">
+        <div class="inscription">
+            <h1  class="title"> Modifier Direction d'achat</h1> 
+            <form>     
+                    <div class="form-group col-12">
+                        <span class="p-float-label">
+                            <!--[(ngModel)]="newprojet.sujet"
+                             [disabled]="!projet.form.valid"   (onClick)="ajout()"-->
+                             <input class="input" type="text" id="inputtext" pInputText  [(ngModel)]= "directionAchatUpdate. achatDirection"     name="natureProjet"> 
+                             <label for="inputtext" class="inputtext"  >Direction d'achat</label>
+                       </span>
+                      </div>
+                <!--
+                 <p-button class="boutton" label="Ajout" styleClass="p-button-secondary"  (onClick)="update()"></p-button>
+            -->
+            <div class="button"> 
+                <input type="submit" value="modifier" (click)="update()">
+    
+            </div>
+            
+                </form>
+    
+        </div>
+    </div>
+        
+        
+           
+    </div>

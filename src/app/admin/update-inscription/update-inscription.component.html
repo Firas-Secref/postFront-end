@@ -1,0 +1,107 @@
+<div class="body">
+    <div class="container">
+        <h1 class="title">Modifier Utilisateur</h1>
+        <form action="#">
+            <div class="info-utilisateur">
+                <!--prenon-->
+                <div class="input-box">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" placeholder="Prenom"  pInputText  name="prenom"  value="" required    [(ngModel)]="utilisateurUpdate.prenom" #prenom="ngModel"> 
+                    <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)"
+                    class="alert "> 
+                    <div *ngIf="prenom.errors?.['required']"  class="alert alert-danger">
+                      Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                    </div>
+                  </div>
+                </div>
+                <div class="input-box">
+                    <label for="Nom">Nom</label>
+                    <input type="text" placeholder="nom" pInputText  name="nom"  value="" required    [(ngModel)]="utilisateurUpdate.nom" #nom="ngModel"> 
+                    <div *ngIf="nom.invalid && (nom.dirty || nom.touched)"
+                    class="alert "> 
+                    <div *ngIf="nom.errors?.['required']"  class="alert alert-danger">
+                      Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                    </div>
+                    
+                    
+                  </div>
+                  
+                </div>
+                <div class="input-box">
+                    <label for="Nom">Matricule</label>
+                    <input type="number" placeholder="Matricule" pInputText  name="matricule"  value="" required    [(ngModel)]="utilisateurUpdate.matricule" #matricule="ngModel" > 
+                    <div *ngIf="matricule.invalid && (matricule.dirty || matricule.touched)"
+                    class="alert "> 
+                    <div *ngIf="matricule.errors?.['required']"  class="alert alert-danger">
+                      Veuillez compléter ce champ obligatoire avec  une matricule valide 
+                    </div>
+                   
+                   
+                    </div>
+                </div>
+
+               
+              
+                <div class="input-box">
+                    <label for="Nom">Email</label>
+                    <input type="email" placeholder="email" pInputText  name="email"  value="" required    [(ngModel)]="utilisateurUpdate.email" #email="ngModel" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"> 
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                 class="alert "> 
+                 <div *ngIf="email.errors?.['required']"  class="alert alert-danger">
+                   Veuillez compléter ce champ obligatoire 
+                 </div>
+                 <div *ngIf="email.errors?.['pattern']"  class="alert alert-danger">
+                  Veuillez entrer une adresse e-mail valide
+                </div>
+                 </div>
+                </div>
+                <div class="input-box">
+                    <label for="Nom">Téléphone</label>
+                    <input type="number" placeholder="telephone"  pInputText  name="telephone"  value="" required    [(ngModel)]="utilisateurUpdate.telephone" #telephone="ngModel" pattern="\d{8,}"> 
+                    <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)"
+                    class="alert "> 
+                    <div *ngIf="telephone.errors?.['required']"  class="alert alert-danger">
+                      Veuillez compléter ce champ obligatoire  avec un numéro de téléphone valide 
+                    </div>
+                    <div *ngIf="telephone.errors?.['pattern']" class="alert alert-danger">
+                     "Veuillez entrer un nombre d'au moins 8 chiffres"
+                   </div> 
+                </div>
+                </div>
+                <div class="input-box">
+                    <label for="Nom">Mot de passe</label>
+                    <input type="password" placeholder="motDePasse"  pInputText  name="motDePasse"  value="" required    [(ngModel)]="utilisateurUpdate.motDePasse" #motDePasse="ngModel"   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8"> 
+                    <div *ngIf="motDePasse.invalid && (motDePasse.dirty || motDePasse.touched)"
+                     class="alert "> 
+                     <div *ngIf="motDePasse.errors?.['required']"  class="alert alert-danger">
+                       Veuillez compléter ce champ obligatoire   et doit contenir du texte
+                     </div>
+                     <div *ngIf="motDePasse.errors?.['pattern']" class="alert alert-danger">
+                      "Le mot de passe doit contenir  au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial."
+                    </div> 
+                    <div *ngIf="motDePasse.errors?.['minlength']" class="alert alert-danger">
+                      "  Le mot de passe doit être d'au moins 8 caractères"
+                    </div> 
+                     </div>
+                </div>
+            </div>
+            <div class="button"> 
+                <input type="submit" value="Modifier" (click)="update()">
+
+            </div>
+           
+            
+            
+        
+        </form>
+        
+        
+        
+        
+        
+        
+        
+
+    </div>
+
+</div>

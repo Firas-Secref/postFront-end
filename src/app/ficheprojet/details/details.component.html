@@ -1,0 +1,316 @@
+<div class="row   consulter">
+    <div class="col-6"> Consulter Fiche Technique</div>
+</div>
+    <div class="row formulaire">
+      <p-tabView >
+        <!--creatino de la carte-->
+          <p-tabPanel header="Création de la carte" >
+            <div class="row">
+              <!--Nature de projet-->
+             <div  class="col-6">
+                 <label for="inputtext"  >Nature de projet:</label>
+             </div>
+             <div class="col-6">
+                {{natureprojet?.nature}} 
+             </div>
+         </div>
+         <br>
+         <!--region-->
+         <div  class="row">
+            <div class="form-group col-6">
+                <label for="inputtext">Region:</label>
+           </div>
+           <div class="col-6">{{region?.nomRegion}}</div>
+              
+        </div>
+        <br>
+        <!--sujet-->
+         <div class="row">
+            <div class="form-group col-6">
+                  <label for="inputtext"  >Sujet:</label>
+             </div>
+             <div  class="col-6">
+                 {{ detailsFiche?.sujetProjet}}
+             </div>
+             
+            
+
+         </div>
+         <br>
+         
+         <!--ordonnateur-->
+         <div  class="row">
+             <div class="col-6">
+                 <label for="inputtext">Ordonnateur:</label>
+             </div>
+             <div class="col-6">
+                 {{detailsFiche?.nomOrdonnateur}}
+             </div>
+
+         </div>
+         <br>
+          <!--numcompte-->
+          <div class="row">
+             <div class="col-6">
+                 <label for="inputtext">NumCompte:</label>
+             </div>
+            
+             <div class="col-6">
+                 {{detailsFiche?.numCompte}}
+             </div>
+          </div>
+          <br>
+          <!--budgetI-->
+          <div  class="row">
+             <div class="col-6">
+                 <label for="inputtext">Budget Initial: </label>
+           </div>
+           <div class="col-6">
+                   {{detailsFiche?. initBudget}}   
+       </div>
+
+          </div>
+          <br>
+<!--budgetJour-->
+          <div class="row">
+            
+           
+            <div class="col-6">
+
+                  <label for="inputtext">Budget mise a jour </label> 
+                 
+            </div> 
+            <div class="col-6">
+
+         {{detailsFiche?.updateBudget}} 
+            
+       </div> 
+          </div>
+          <br>
+          <!--prommess
+
+          <div class="row">
+            <div class="col-6"> 
+                  <label for="inputtext">Promesses :</label>
+            </div>
+            <div class="col-6"> 
+             {{detailsProjet?.promesses}} 
+       </div>
+      
+          </div>
+          <br>
+          paiement
+            
+          <div class="row">
+             <div class="col-6">
+               
+                 <label for="inputtext">Paiements: </label>
+            
+              </div>
+
+              <div class="col-6">
+              
+                {{detailsProjet?.paiements}} 
+           
+             </div>
+
+          </div>-->
+          </p-tabPanel>
+        <!--Calendrier previsionnel-->  
+          <p-tabPanel header="Donnés sur le projet">
+            <div class="row">
+              <div class="col-6">
+                  <label for="inputtext">Responsable du dossier:</label>
+              </div>
+              <div class="col-6">
+                  {{detailsFiche?.responsable}}   
+              </div>
+             </div>
+             <br>
+             <div class="row">
+                <div class="col-6">
+                    <label for="inputtext">Date d'agrément des spécifications :</label>
+                </div>
+                <div class="col-6">
+                    {{detailsFiche?.dateSpecification | date}}   
+                </div>
+             </div>
+             
+           
+             
+           <br>
+            
+             <!--negociation-->
+             <div class="row">
+                <div class="col-6  colorspan">
+                   <span  for="inputtext">Date d'annonce de concours/Début de négociation:</span>
+                </div>
+                <div class="col-6">
+                  {{detailsFiche?.dateNegociation | date}} 
+                </div>
+                
+             </div>
+             <br>
+             <!--soummision-->
+             <div class="row">
+                <div class="col-6  colorspan">
+                   <span for="inputtext">Date d'ouverture des soumissions :</span>
+                </div>
+                <div  class="col-6">
+              {{detailsFiche?.dateSoumission | date}} 
+                </div>
+   
+             </div>
+             <br>
+             <div class="row">
+                <div class="col-6  colorspan">
+                   <span for="inputtext">Date de réponse du comité de suivi :</span>
+                </div>
+                <div  class="col-6">
+              {{detailsFiche?. dateReponse | date}} 
+                </div>
+   
+             </div>
+             <br>
+          </p-tabPanel>
+
+          <!--les prersonnes impliquees  (fiche)-->
+          <p-tabPanel header="Les personnes impliquées dans la mise en ouevre du projet ">
+            <h2 class="titre">Chef de projet</h2>
+            <div class="row">
+                <!--nomchef-->
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Nom&Prenom  du Chef de projet:</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsFiche?.nomChefProjet}}
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span  for="inputtext">Titre de  Chef de projet:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.gradeChefProjet}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span   for="inputtext">Telephone  de Chef de projet:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.telChefProjet}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span  for="inputtext">Email de  Chef de projet:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.emailChefProjet}}
+                    </div>
+                </div>
+                <br>
+                <br>
+               
+                 <!--Le répresentant de l'Ordonnateur-->
+                 <h2 class="titre">Le répresentant de l'Ordonnateur</h2>
+                 <div class="row">
+                    <div class="col-6  colorspan">
+                        <span >Nom & Prénom  du Representant  de l'ordonnateur:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.nomOrdonnateur}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Titre  du Representant  de l'ordonnateur:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.gradeOrdonnateur}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Telephone  du Representant  de l'ordonnateur:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.telOrdonnateur}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Email  du Representant  de l'ordonnateur:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.emailOrdonnateur}}
+                    </div>
+                </div>
+                <br>
+                <br>
+
+               
+                  <!--Le répresentant de service d'achat concerné-->
+                  <h2 class="titre">Le répresentant de service d'achat concerné</h2>
+                  <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Nom & Prénom  du Representant  de service d'achat concerné:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.nomRepresentantService}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Titre  du Representant  de service d'achat concerné:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.gradeRepresentantService}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Télephone du Representant  de service d'achat concerné:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.telRepresentantService}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-6  colorspan">
+                        <span>Email du Representant  de service d'achat concerné:</span>
+                    </div>
+                    <div class="col-6 ">
+                        {{detailsFiche?.emailRepresentantService}}
+                    </div>
+                </div>
+
+            
+
+
+                
+                
+                      
+            </div>
+
+          </p-tabPanel>

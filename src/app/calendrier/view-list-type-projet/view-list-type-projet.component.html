@@ -1,0 +1,40 @@
+
+
+<div  class=" row bajout">
+    <div class="col-6"><p  >Nature de projet</p></div>
+    <div class="col-6" >
+      <button   pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded "   style="background-color:rgb(255,194,36); color: #023674; width: 60px;"    (click)="ajoutTypeProjet()" ></button>
+    </div>
+  </div>
+  
+  
+  <div class="tab">
+      <p-table  [value]="natureProjetList">
+        <p-table>Calendrier</p-table>
+        <ng-template pTemplate="header" >
+          <tr>
+            <th>Nom</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </ng-template>
+       
+        <ng-template pTemplate="body" let-natureProjet  >
+          <tr>
+            <td>{{natureProjet.nature}}</td>
+           
+            <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left" (click)="updateTypeProjet(natureProjet.id)"  style="background-color:rgb(16,21,94); color:#fff; width: 50px;" ></button></td>
+            <td><button pButton type="button" icon="pi pi-trash" iconPos="left" (click)="deleteTypeProjet(natureProjet)"    style="background-color:rgb(246,0,0); color:#fff; width: 50px;"></button></td>
+           
+            
+          </tr>
+        </ng-template>
+      </p-table>
+      
+  </div>
+  
+  
+  
+  
+  
+  

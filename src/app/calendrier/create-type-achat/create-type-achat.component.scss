@@ -1,0 +1,166 @@
+/*label{
+    color:black;
+} 
+
+
+
+
+
+.formulaire{
+    margin-top:1px;
+    background-color: beige;
+    border-radius: 5px;
+    margin-right:200px;
+    margin-left:200px;
+    margin-bottom: 100px;
+    height: 130px;
+
+}
+
+.form-group{
+    margin-left:200px;
+    margin-top: 20px;
+
+}
+
+
+.ajout{
+    height: 50px;
+    background-color: rgb(16,21,94);
+    margin-right:200px;
+    margin-left:200px;
+    margin-top:10px;
+    border-radius:5px;
+    font-size:23px;
+    padding-top: 10px;
+    color:rgb(255,194,36);
+}
+
+
+.boutton{
+    margin-left:450px;
+    size:20px;
+    padding-top:-60px;
+    margin-top: -30px;
+}
+
+
+.tout{
+    margin-top:60px;
+}
+*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:sans-serif
+}
+
+
+.tout{
+    display:flex;
+    height:190px;
+    justify-content: center;
+    align-items:center;
+    margin-top:100px;
+}
+
+
+
+
+label{
+    color:black;
+} 
+
+
+.container{
+    background-color: rgb(16,21,94);
+    width: 100%;
+    max-width:650px;
+    padding:20px;
+    margin:0 28px;
+    border-radius: 20px;
+    box-shadow:inset -2px 2px 2px   rgb(255,194,36);
+
+}
+
+
+.title{
+    font-size: 30px;
+    font-weight: 600px;
+    text-align: center;
+    padding-bottom: 6px;
+    color: rgb(255,194,36);
+    text-shadow:2px 2px 2px black;
+    border-bottom:solid  1px   rgb(255,194,36);
+}
+
+
+.formulaire{
+    margin-top:1px;
+   
+    border-radius: 5px;
+    margin-right:200px;
+    margin-left:200px;
+    margin-bottom: 100px;
+    height: 130px;
+
+}
+
+.form-group{
+    margin-left:200px;
+    margin-top: 30px;
+  
+    color:rgb(255,194,36);
+
+}
+
+.input{
+    height: 50px;
+
+}
+
+/*
+.ajout{
+    height: 50px;
+   
+    margin-right:200px;
+    margin-left:200px;
+    margin-top:10px;
+    border-radius:5px;
+    font-size:23px;
+    padding-top: 10px;
+    color:rgb(255,194,36);
+}*/
+
+/*
+.boutton{
+    margin-left:450px;
+    size:5px;
+    padding-top:-60px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    
+}*/
+.button{
+    margin-left:430px;
+}
+
+.button input{
+    display:block;
+    width:40%;
+    margin-top:10px;
+    font-size: 20px;
+    padding: 6px;
+    border:none;
+    border-radius:3px;
+    background:rgb(255,194,36);
+    color:rgba(255,255 ,255);
+
+}
+
+
+
+
+
+

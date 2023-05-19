@@ -1,0 +1,178 @@
+
+<br>
+<br>
+<div class="row" >
+    <p-tabView  >
+        <p-tabPanel   header="Création de la carte"  >
+           
+            <div class="row">
+                 <!--Nature de projet-->
+                <div  class="col-6">
+                    <label for="inputtext"  >Nature de projet:</label>
+                </div>
+                <div class="col-6">
+                   
+                    {{natureprojet!= undefined ? natureprojet.nature : ''}}   
+                </div>
+            </div>
+            <br>
+ <!--sujet-->
+            <div class="row">
+               <div class="form-group col-6">
+                     <label for="inputtext"  >Sujet:</label>
+                </div>
+                <div  class="col-6">
+                    {{ detailsProjet?.sujet}}
+                </div>
+                
+               
+
+            </div>
+            <br>
+            <!--region-->
+            <div  class="row">
+                <div class="form-group col-6">
+                    <label for="inputtext">Region:</label>
+               </div>
+               <div class="col-6">{{region!= undefined ? region.nomRegion : ''}}</div>
+                  
+            </div>
+            <br>
+            <!--ordonnateur-->
+            <div  class="row">
+                <div class="col-6">
+                    <label for="inputtext">Ordonnateur:</label>
+                </div>
+                <div class="col-6">
+                    {{detailsProjet?.ordonnateur}}
+                </div>
+
+            </div>
+            <br>
+             <!--numcompte-->
+             <div class="row">
+                <div class="col-6">
+                    <label for="inputtext">NumCompte:</label>
+                </div>
+               
+                <div class="col-6">
+                    {{detailsProjet?.numCompte}}
+                </div>
+             </div>
+             <br>
+             <!--budgetI-->
+             <div  class="row">
+                <div class="col-6">
+                    <label for="inputtext">Budget Initial: </label>
+              </div>
+              <div class="col-6">
+                      {{detailsProjet?.coutInitial}}   
+          </div>
+
+             </div>
+             <br>
+  <!--budgetJour-->
+             <div class="row">
+               
+              
+               <div class="col-6">
+
+                     <label for="inputtext">Budget mise a jour </label> 
+                    
+               </div> 
+               <div class="col-6">
+
+            {{detailsProjet?.coutMisAjour}} 
+               
+          </div> 
+             </div>
+             <br>
+             
+           
+               
+            
+    
+
+        </p-tabPanel>
+        <!--CalendrierPrevisionnel-->
+        <p-tabPanel header="Calendrier prévisionnel">
+        <!--responsable-->
+               <div class="row">
+                <div class="col-6">
+                    <label for="inputtext">Responsable du dossier:</label>
+                </div>
+                <div class="col-6">
+                    {{detailsProjet?.responsable}}   
+                </div>
+               </div>
+               <br>
+               <!--dateCahier-->
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>Date d'agrément des spécifications :</span>
+                  </div>
+                  <div  class="col-6">
+                    {{detailsProjet?.dateAgrementSpecifications}} 
+                  </div>
+                  
+                     
+               </div>
+               <br>
+               <!--negociation-->
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'annonce de concours/Début de négociation:</span>
+                  </div>
+                  <div class="col-6">
+                    {{detailsProjet?.dateNegociation}} 
+                  </div>
+                  
+               </div>
+               <br>
+               <!--soummision-->
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'ouverture des soumissions :</span>
+                  </div>
+                  <div  class="col-6">
+                {{detailsProjet?.dateOuvertureSoumission}} 
+                  </div>
+     
+               </div>
+               <br>
+               <!--comite-->
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>La date à la quelle le dossier a été transmis au commité des achats:</span>
+                  </div>
+                  <div  class="col-6"> 
+                    {{detailsProjet?.dateTransmissionComite}} 
+                  </div>
+               </div>
+               <br>
+               <!--conseil-->
+               <div class="row">
+                  <div class="col-6    colorspan">
+                     <span>Date de réponse du comité de suivi:</span>
+                  </div>
+                  <div  class="col-6">
+                    {{detailsProjet?.dateReponseCommite}} 
+                  </div>
+                 
+               
+
+               </div>
+               
+            
+            
+           <br>
+             
+        </p-tabPanel>
+    </p-tabView>
+
+
+
+
+
+
+

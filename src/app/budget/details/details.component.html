@@ -1,0 +1,306 @@
+<div class="row   ajout">
+  <div class="col-6">Consulter Etude bugétaire</div>
+ </div>
+ <div class="row formulaire">
+  <p-tabView [scrollable]="true">
+     <!--creatino de la carte-->
+     <p-tabPanel header="Création de la carte" >
+      <div class="row">
+        <!--Nature de projet-->
+       <div  class="col-6">
+           <label for="inputtext"  >Nature de projet:</label>
+       </div>
+       <div class="col-6">
+        {{natureprojet!= undefined ? natureprojet.nature : ''}} 
+       </div>
+   </div>
+   <br>
+   <!--region-->
+   <div  class="row">
+    <div class="form-group col-6">
+        <label for="inputtext">Region:</label>
+   </div>
+   <div class="col-6">{{region!= undefined ? region.nomRegion : ''}}</div>
+      
+</div>
+<br>
+  <!--sujet-->
+   <div class="row">
+      <div class="form-group col-6">
+            <label for="inputtext"  >Sujet:</label>
+       </div>
+       <div  class="col-6">
+           {{ detailsBudget?.sujetProjet}}
+       </div>
+       
+      
+
+   </div>
+   <br>
+   
+   <!--ordonnateur-->
+   <div  class="row">
+       <div class="col-6">
+           <label for="inputtext">Ordonnateur:</label>
+       </div>
+       <div class="col-6">
+           {{detailsBudget?.ordonnateur}}
+       </div>
+
+   </div>
+   <br>
+    <!--numcompte-->
+    <div class="row">
+       <div class="col-6">
+           <label for="inputtext">NumCompte:</label>
+       </div>
+      
+       <div class="col-6">
+           {{detailsBudget?.numCompte}}
+       </div>
+    </div>
+    <br>
+    <!--budgetI-->
+    <div  class="row">
+       <div class="col-6">
+           <label for="inputtext">Budget Initial: </label>
+     </div>
+     <div class="col-6">
+             {{detailsBudget?.budgetEstimee}}   
+ </div>
+
+    </div>
+    <br>
+<!--budgetJour-->
+    <div class="row">
+      
+     
+      <div class="col-6">
+
+            <label for="inputtext">Budget mise a jour </label> 
+           
+      </div> 
+      <div class="col-6">
+
+   {{detailsBudget?.budgetValidee}} 
+      
+ </div> 
+    </div>
+    <br>
+    <!--prommess
+
+    <div class="row">
+      <div class="col-6"> 
+            <label for="inputtext">Promesses :</label>
+      </div>
+      <div class="col-6"> 
+       {{detailsProjet?.promesses}} 
+ </div>
+
+    </div>
+    <br>
+    paiement
+      
+    <div class="row">
+       <div class="col-6">
+         
+           <label for="inputtext">Paiements: </label>
+      
+        </div>
+
+        <div class="col-6">
+        
+          {{detailsProjet?.paiements}} 
+     
+       </div>
+
+    </div>
+  -->
+    </p-tabPanel>
+   
+<!--"Données sur le projet"-->
+  <p-tabPanel header="Données sur le projet" >
+    <div class="row">
+      <div class="col-6">
+          <label for="inputtext">Responsable du dossier:</label>
+      </div>
+      <div class="col-6">
+          {{detailsBudget?.calendrierDto.responsable}}   
+      </div>
+     </div>
+     <br>
+     <!--dateCahier-->
+     <div class="row">
+        <div class="col-6   colorspan">
+           <span>Date d'agrément des spécifications :</span>
+        </div>
+        <div  class="col-6">
+          {{detailsBudget?.calendrierDto.dateAgrementSpecifications | date}} 
+        </div>
+        
+           
+     </div>
+     <br>
+     <!--negociation-->
+     <div class="row">
+        <div class="col-6  colorspan">
+           <span>Date d'annonce de concours/Début de négociation:</span>
+        </div>
+        <div class="col-6">
+          {{detailsBudget?.calendrierDto.dateNegociation}} 
+        </div>
+        
+     </div>
+     <br>
+     <!--soummision-->
+     <div class="row">
+        <div class="col-6  colorspan">
+           <span>Date d'ouverture des soumissions :</span>
+        </div>
+        <div  class="col-6">
+      {{detailsBudget?.calendrierDto.dateOuvertureSoumission | date}} 
+        </div>
+
+     </div>
+     <br>
+     <!--comite-->
+     <div class="row">
+        <div class="col-6   colorspan">
+           <span>La date à la quelle le dossier a été transmis au commité des achats:</span>
+        </div>
+        <div  class="col-6"> 
+          {{detailsBudget?.calendrierDto.dateTransmissionComite}} 
+        </div>
+     </div>
+     <br>
+     <!--conseil-->
+     <div class="row">
+        <div class="col-6    colorspan">
+           <span>Date de réponse du comité de suivi:</span>
+        </div>
+        <div  class="col-6">
+          {{detailsBudget?.calendrierDto.dateReponseCommite}} 
+        </div>
+       
+     
+
+     </div>
+     
+  
+  
+ <br>
+  </p-tabPanel>
+
+  <!--Les personnes imlpiquées dans la mise en oeuvre du projet-->
+  <p-tabPanel  header="Les personnes imlpiquées dans la mise en oeuvre du projet" >
+    <div class="row">
+      <div class="col-6   colorspan">
+         <span>Chef de projet:</span>
+      </div>
+      <div  class="col-6"> 
+        {{detailsBudget?.calendrierDto.nomChefProjet}} 
+      </div>
+   </div><br>
+   <div class="row">
+    <div class="col-6   colorspan">
+       <span>Le répresentant de l'Ordonnateur:</span>
+    </div>
+    <div  class="col-6"> 
+      {{detailsBudget?.calendrierDto.nomRepOrdonnateur}} 
+    </div>
+ </div><br>
+ <div class="row">
+  <div class="col-6   colorspan">
+     <span>Le répresentant de service d'achat concerné:</span>
+  </div>
+  <div  class="col-6"> 
+    {{detailsBudget?.calendrierDto.nomRepresentantService}} 
+  </div>
+</div>
+  </p-tabPanel>
+  <p-tabPanel header="Etude de budget" >
+    
+            <div class="row">
+                <!--nomcompte-->
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Numero du compte:</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.numCompte}}
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="row">
+                <!--nomchef-->
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Type de financement:</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.typeFinancement}}
+                </div>
+                <br>
+                <br>
+            </div>
+           <!--Budget Estimé--> 
+           <h2>coût total</h2>
+            <div class="row">
+    
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Budget Estimé:</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.budgetEstimee}}
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="row">
+    
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Budget Validé:</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.budgetValidee}}
+                </div>
+                <br>
+                <br>
+            </div>
+            <h2>Calendrier de mise en oeuvre du projet(estimé)</h2>
+            <div class="row">
+    
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Date date de début de la mise en oeuvre :</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.dateDebutMiseEnOeuvre}}
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="row">
+    
+                <div class="col-6  colorspan">
+                    <span  for="inputtext">Délais de réalisation (Jour):</span>
+                </div>
+                <br>
+                <br>
+                <div class="col-6 ">
+                    {{detailsBudget?.delaiRealisation}}
+                </div>
+                <br>
+                <br>
+            </div>
+        
+  </p-tabPanel>
+</p-tabView>

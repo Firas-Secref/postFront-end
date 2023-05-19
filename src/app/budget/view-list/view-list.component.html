@@ -1,0 +1,66 @@
+<div  class=" row bajout">
+  <br>
+  <div class="col-10">
+    <br>
+    <p  >Etude Budgétaire</p></div>
+  <div class=" bouton col-2" >
+    <div class=" bouton col-2" >
+     
+      <button  (click)="showDialog()" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded "   style="background-color:rgb(255,194,36); color: #023674; width: 60px;"></button>
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+<div>
+    <div class="tab">
+      <p-table [value]="budgetList"   [value]="detailsProjet">
+        <p-table>Calendrier</p-table>
+        <ng-template pTemplate="header" >
+          <tr>
+            <th>Nature de projet</th>
+            <th>Sujet</th>
+            <th>Budgets Validéé </th>
+            <th>Budgets Estimée</th>
+            <th>Type financement</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body"   let-budget    let-details>
+          <tr>
+            <td> {{ budget.natureProjet}}</td>
+            <td>{{ budget.sujetProjet}}</td>
+            <td>{{budget.budgetValidee}}</td>
+            <td>{{budget.budgetEstimee}} </td>
+            <td>{{budget.typeFinancement}}</td>
+      
+            <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left"(click)="updateBudget(budget.id)" style="background-color:rgb(16,21,94); color:#fff; width: 50px;"></button></td>
+            <td><button pButton type="button" icon="pi pi-trash" iconPos="left" (click)="deleteBudget(budget)"    style="background-color:rgb(246,0,0); color:#fff; width: 50px;" ></button></td>
+            <td><button pButton type="button" icon="pi pi-save" iconPos="left" (click)="detailsBudget(budget.id)" style="background-color:rgb(16,21,94); color:#fff; width: 50px;"></button></td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <p-dialog header="Projet Accepté" [(visible)]="display">
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="projetId">
+       
+          <option value="-1" disabled selected>Sélectionner</option>
+
+          <option  *ngFor="let p of projetList" [value]="p.idCa">{{p.sujet}}</option>
+          
+        </select>
+        <button  (click)="ajoutBudget()" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-secondary " ></button>
+     
+
+    </p-dialog>
+      </div>
+  </div>
+
+
+
+
