@@ -94,6 +94,7 @@ console.log(this.filterBy);
 
     if(localStorage.getItem("role") ==="Direction d'achat divers" || 
     localStorage.getItem("role") ==="direction de planification et budget" ||
+    localStorage.getItem("role") ==="direction d'achat informatique" ||
     localStorage.getItem("role") ==="Direction d'achat de travaux et batiment"){
       console.log(arg.date.toISOString().substring(0,10));
       this.display = true;

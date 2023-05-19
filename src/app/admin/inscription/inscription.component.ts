@@ -37,6 +37,8 @@ export class InscriptionComponent implements OnInit {
     
     
     // const roleObject = {role: this.inscriptionForm.value.role.roleObject}
+
+    // ken fema mochkol fil creation m loul : this.inscriptionForm.value.role.roleObject  f ligne li lota rodha  this.inscriptionForm.value.role  w ba3ed raja7a kima kanit (seulement pour la creation du 1er user)
     formData.append("role", JSON.stringify(this.inscriptionForm.value.role.roleObject));
     console.log(userOject);
     
