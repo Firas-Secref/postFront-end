@@ -127,7 +127,7 @@ console.log(this.filterBy);
 
   handleEventClick(arg: EventClickArg) {
     console.log(arg);
-    this.route.navigate(['/calendrier/details',parseInt(arg.event.id)])
+    this.route.navigate(['/calendrier/detailsProjetEncCour',parseInt(arg.event.id)])
 
   }
 
@@ -174,23 +174,33 @@ getselectedProject(){
 
 getUnselectedProjects(){
   this.newProjectService.getUnselectedProduct().subscribe((projectsData: any[])=>{
+    
     console.log(projectsData);
+    let pList: any[] = []
+    projectsData.forEach(p=>{
+      if(p.budgetSelected == true){
+        pList.push(p)
+      }
+    })
+
+    console.log(pList);
     
     if(this.filterBy ==="all"){
-      this.projetList = projectsData
+      this.projetList = pList
     }else{
-      projectsData.forEach((obj: any)=>{
+      pList.forEach((obj: any)=>{
         console.log("aaaa", obj);
         
-        if( obj.typeAchat !== this.filterBy){
-          // if(obj.budgetSelected){
+        // if( obj.typeAchat !== this.filterBy){
+           if(obj.typeAchat !== this.filterBy){
             this.projetList.push(obj)
 
-          // }
+          //  }
         }
        })
-       console.log(this.projetList);
     }
+    console.log(this.projetList);
+
     console.log("eee",projectsData);
     
   })

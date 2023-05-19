@@ -22,6 +22,7 @@ import { ViewListDirectionAchatComponent } from './view-list-direction-achat/vie
 import { CreateTypeAchatComponent } from './create-type-achat/create-type-achat.component';
 import { UpdateTypeAchatComponent } from './update-type-achat/update-type-achat.component';
 import { ViewListTypeAchatComponent } from './view-list-type-achat/view-list-type-achat.component';
+import { DetailsProjetEncourComponent } from './details-projet-encour/details-projet-encour.component';
 
 
 
@@ -32,6 +33,8 @@ const routes: Routes = [
   {path:'update-projet/:id',component:UpdateProjetComponent},
   {path:'view-list',component:ViewListComponent},
   {path:'details/:id',component:DetailsComponent},
+  {path:'detailsProjetEncCour/:id',component:DetailsProjetEncourComponent},
+
 /*region*/
   {path:'create-region',component:CreateRegionComponent},
   {path:'view-list-region',component:ViewListRegionComponent},

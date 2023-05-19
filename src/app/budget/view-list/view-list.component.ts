@@ -122,8 +122,13 @@ export class ViewListComponent  implements OnInit {
 
     getProjet(){
       this.calendrierService.getAllProjet().subscribe(data=>{
-        this.projetList=data;
-        console.log(data);
+        //this.projetList=data;
+        data.forEach(p=>{
+          if(p.selectedFiche==true){
+            this.projetList.push(p)
+          }
+        })
+        console.log(this.projetList);
         
       });
     }

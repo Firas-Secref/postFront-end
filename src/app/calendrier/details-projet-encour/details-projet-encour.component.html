@@ -1,0 +1,177 @@
+
+<br>
+<br>
+<div class="row" >
+    <p-tabView  >
+        <p-tabPanel   header="Création de la carte"  >
+           
+            
+ <!--sujet-->
+            <div class="row">
+               <div class="form-group col-6">
+                     <label for="inputtext"  >Sujet:</label>
+                </div>
+                <div  class="col-6">
+                    {{ detailsProjet?.sujet}}
+                </div>
+                
+               
+
+            </div>
+            
+            <br>
+            <!--ordonnateur-->
+            <div  class="row">
+                <div class="col-6">
+                    <label for="inputtext">Ordonnateur:</label>
+                </div>
+                <div class="col-6">
+                    {{detailsProjet?.ordonnateur}}
+                </div>
+
+            </div>
+            <br>
+             <!--numcompte-->
+             <div class="row">
+                <div class="col-6">
+                    <label for="inputtext">NumCompte:</label>
+                </div>
+               
+                <div class="col-6">
+                    {{detailsProjet?.numCompte}}
+                </div>
+             </div>
+             <br>
+             <!--budgetI-->
+             <div  class="row">
+                <div class="col-6">
+                    <label for="inputtext">Budget Initial: </label>
+              </div>
+              <div class="col-6">
+                      {{detailsProjet?.coutInitial}}   
+          </div>
+
+             </div>
+             <br>
+  <!--budgetJour-->
+             <div class="row">
+               
+              
+               <div class="col-6">
+
+                     <label for="inputtext">Budget mise a jour </label> 
+                    
+               </div> 
+               <div class="col-6">
+
+            {{detailsProjet?.coutMisAjour | date}} 
+               
+          </div> 
+             </div>
+             <br>
+             
+           
+               
+            
+    
+
+        </p-tabPanel>
+        <!--CalendrierPrevisionnel-->
+        <p-tabPanel header="Calendrier prévisionnel">
+        <!--responsable-->
+               <div class="row">
+                <div class="col-6">
+                    <label for="inputtext">Responsable du dossier:</label>
+                </div>
+                <div class="col-6">
+                    {{detailsProjet?.responsable}}   
+                </div>
+               </div>
+               <br>
+               <!--dateCahier-->
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>Date d'agrément des spécifications :</span>
+                  </div>
+                  <div  class="col-6">
+                    {{detailsProjet?.dateAgrementSpecifications | date}} 
+                  </div>
+                  
+                     
+               </div>
+               <br>
+               <!--negociation-->
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'annonce de concours/Début de négociation:</span>
+                  </div>
+                  <div class="col-6">
+                    {{detailsProjet?.dateNegociation | date}} 
+                  </div>
+                  
+               </div>
+               <br>
+               <!--soummision-->
+               <div class="row">
+                  <div class="col-6  colorspan">
+                     <span>Date d'ouverture des soumissions :</span>
+                  </div>
+                  <div  class="col-6">
+                {{detailsProjet?.dateOuvertureSoumission | date}} 
+                  </div>
+     
+               </div>
+               <br>
+               <!--comite-->
+               <div class="row">
+                  <div class="col-6   colorspan">
+                     <span>La date à la quelle le dossier a été transmis au commité des achats:</span>
+                  </div>
+                  <div  class="col-6"> 
+                    {{detailsProjet?.dateTransmissionComite | date}} 
+                  </div>
+               </div>
+               <br>
+               <!--conseil-->
+               
+               
+            
+            
+           <br>
+             
+        </p-tabPanel>
+
+        <p-tabPanel  header="Les personnes imlpiquées dans la mise en oeuvre du projet" >
+            <div class="row">
+              <div class="col-6   colorspan">
+                 <span>Chef de projet:</span>
+              </div>
+              <div  class="col-6"> 
+                {{detailsProjet?.nomChefProjet}} 
+              </div>
+           </div><br>
+           <div class="row">
+            <div class="col-6   colorspan">
+               <span>Le répresentant de l'Ordonnateur:</span>
+            </div>
+            <div  class="col-6"> 
+              {{detailsProjet?.nomRepOrdonnateur}} 
+            </div>
+         </div><br>
+         <div class="row">
+          <div class="col-6   colorspan">
+             <span>Le répresentant de service d'achat concerné:</span>
+          </div>
+          <div  class="col-6"> 
+            {{detailsProjet?.nomRepresentantService}} 
+          </div>
+        </div>
+          </p-tabPanel>
+    </p-tabView>
+
+
+
+
+
+
+

@@ -33,6 +33,7 @@ import { ViewListTypeAchatComponent } from './view-list-type-achat/view-list-typ
 import { CreateDirectionAchatComponent } from './create-direction-achat/create-direction-achat.component';
 import { UpdateDirectionAchatComponent } from './update-direction-achat/update-direction-achat.component';
 import { ViewListDirectionAchatComponent } from './view-list-direction-achat/view-list-direction-achat.component';
+import { DetailsProjetEncourComponent } from './details-projet-encour/details-projet-encour.component';
 
 
 
@@ -60,6 +61,7 @@ import { ViewListDirectionAchatComponent } from './view-list-direction-achat/vie
     CreateDirectionAchatComponent,
     UpdateDirectionAchatComponent,
     ViewListDirectionAchatComponent,
+    DetailsProjetEncourComponent,
 
   
    
