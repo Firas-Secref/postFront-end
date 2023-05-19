@@ -4,7 +4,7 @@
   <div class="col-10">
     <br>
     <p  >Calendrier</p></div>
-  <div class=" bouton col-2" >
+  <div *ngIf="ordonnateur" class=" bouton col-2" >
     <button  (click)="ajoutProjet()" pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded " style="background-color:rgb(255,194,36); color: #023674; width: 60px;" ></button>
   </div>
 </div>
@@ -29,8 +29,8 @@
           <td> {{projet.natureProjectName}}</td>
           <td>{{projet.sujet}}</td>
           <td> {{projet.ordonnateur}}</td>
-          <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left"  style="background-color:rgb(16,21,94); color:#fff; width: 50px;"  (click)="updateProject(projet.idCa)"></button></td>
-          <td><button pButton type="button" icon="pi pi-trash" iconPos="left"  style="background-color:rgb(246,0,0); color:#fff; width: 50px;"  (click)="deleteProject(projet)"></button></td>
+          <td><button pButton type="button" icon="pi pi-file-edit" iconPos="left"  style="background-color:rgb(16,21,94); color:#fff; width: 50px;" *ngIf="ordonnateur" (click)="updateProject(projet.idCa)"></button></td>
+          <td><button pButton type="button" icon="pi pi-trash" iconPos="left"  style="background-color:rgb(246,0,0); color:#fff; width: 50px;" *ngIf="ordonnateur" (click)="deleteProject(projet)"></button></td>
           <td><button pButton type="button" icon="pi pi-save" iconPos="left"  (click)="detailsProjet(projet.idCa)"   style="background-color:rgb(16,21,94); color:#fff; width: 50px;"> </button></td>
           
         </tr>

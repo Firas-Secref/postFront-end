@@ -182,13 +182,16 @@ getUnselectedProjects(){
       projectsData.forEach((obj: any)=>{
         console.log("aaaa", obj);
         
-        if( obj.typeAchat === this.filterBy && obj.budgetSelected == true){
-         this.projetList.push(obj)
+        if( obj.typeAchat !== this.filterBy){
+          // if(obj.budgetSelected){
+            this.projetList.push(obj)
+
+          // }
         }
        })
        console.log(this.projetList);
     }
-    console.log(projectsData);
+    console.log("eee",projectsData);
     
   })
 }

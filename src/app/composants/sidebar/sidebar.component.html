@@ -16,7 +16,7 @@
                             <span routerLink="/statistique"  class="titre">  Dashboard </span><br><br>
                        </div>
                        
-                       <div *ngIf="admin || ordonnateur">
+                       <div *ngIf="!admin">
                         <i class="pi pi-calendar  titre"></i>
                         <span routerLink="/calendrier/view-list" class="titre"> Calendrier</span><br><br>
 
@@ -27,16 +27,16 @@
                         <span *ngIf="admin"  routerLink="/calendrier/view-list-type-achat"class="titre"> Gestion de type d'achat</span><br><br>
                         <span *ngIf="admin"  routerLink="/calendrier/view-list-direction-achat"class="titre"> Gestion de direction d'achat</span><br><br>
 
-                        <div *ngIf="direction">
+                        <div *ngIf="!admin">
                             <i class="pi pi-folder-open titre"></i>
                             <span routerLink="/fichedeprojet/view-list" class="titre"> Fiche Technique</span><br><br>
     
                         </div>
-                        <div *ngIf="planification">
+                        <div *ngIf="!admin">
                             <i class="pi pi-credit-card titre"></i>
                             <span routerLink="/budget/view-list" class="titre">Etude de Budget</span><br><br>    
                         </div>
-                        <div *ngIf="planification">
+                        <div *ngIf="!admin">
                             <i class="pi pi-chart-bar titre"></i>
                             <span routerLink="/projetAccepte/all" class="titre"> Projet en cours </span><br>
                         </div>

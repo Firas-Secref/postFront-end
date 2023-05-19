@@ -17,6 +17,15 @@ export class ViewListComponent implements OnInit {
   projetList:Projet[] = [];
   filterBy: string = ""
 
+  direction = localStorage.getItem("role") ==="Direction d'achat divers"|| 
+              localStorage.getItem("role") ==="Direction d'achat de travaux et batiment"||
+              localStorage.getItem("role") ==="direction d'achat informatique"
+  
+  admin = localStorage.getItem("role") ==="ADMINISTRATEUR"
+
+  ordonnateur = localStorage.getItem("role") ==="Ordonnateur"
+  planification = localStorage.getItem("role") ==="direction de planification et budget"
+
   constructor(
     private route :Router,
     private calendrierService:CalendrierService,

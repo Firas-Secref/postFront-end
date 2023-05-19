@@ -16,6 +16,15 @@ export class ViewListComponent implements OnInit{
   projetList:any[]=[];
   projetId:number=-1;
   filterBy: string = ""
+
+  direction = localStorage.getItem("role") ==="Direction d'achat divers"|| 
+  localStorage.getItem("role") ==="Direction d'achat de travaux et batiment"||
+  localStorage.getItem("role") ==="direction d'achat informatique"
+
+admin = localStorage.getItem("role") ==="ADMINISTRATEUR"
+
+ordonnateur = localStorage.getItem("role") ==="Ordonnateur"
+planification = localStorage.getItem("role") ==="direction de planification et budget"
   constructor( private route:Router ,private ficheprojet:FicheprojetService,
     private confirmationService:ConfirmationService,private calendrierService:CalendrierService){}
   ngOnInit(): void {

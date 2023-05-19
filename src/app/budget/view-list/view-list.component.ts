@@ -22,6 +22,15 @@ export class ViewListComponent  implements OnInit {
   projetId:number=-1;
   detailsProjet!:any;
 
+  direction = localStorage.getItem("role") ==="Direction d'achat divers"|| 
+  localStorage.getItem("role") ==="Direction d'achat de travaux et batiment"||
+  localStorage.getItem("role") ==="direction d'achat informatique"
+
+  admin = localStorage.getItem("role") ==="ADMINISTRATEUR"
+
+  ordonnateur = localStorage.getItem("role") ==="Ordonnateur"
+  planification = localStorage.getItem("role") ==="direction de planification et budget"
+
   constructor(private dialogService: DialogService, private route:Router, private budgetService:BudgetService, private confirmationService:ConfirmationService,
     private ficheprojet:FicheprojetService,private calendrierService:CalendrierService){}
 
